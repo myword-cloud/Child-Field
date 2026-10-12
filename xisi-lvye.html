@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西寺沟“绿野寻踪” · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo i{color:var(--purple-primary);font-size:1.6rem}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 标签 + 标题 */
+.tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;line-height:1.35}
+.meta{color:var(--text-muted);margin-bottom:2rem;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;padding-bottom:1.2rem;border-bottom:1px solid var(--border-light)}
+.meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面图 */
+.banner{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-size:1.1rem;font-weight:600}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文内容 */
+.content-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
+.content-card h2{color:var(--purple-deep);font-size:1.35rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple-soft)}
+.content-card h2 i{color:var(--purple-primary);font-size:1.2rem}
+.content-card h3{color:var(--purple-deep);font-size:1.1rem;margin:1.5rem 0 .7rem}
+.content-card h3:first-child{margin-top:0}
+.content-card p{color:#4a4458;margin-bottom:1rem}
+.content-card ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.content-card li{margin-bottom:.4rem}
+.content-card blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 亮点 */
+.highlight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.highlight-item{background:var(--purple-soft);border-radius:16px;padding:1rem 1.2rem;border-left:4px solid var(--purple-primary)}
+.highlight-item h4{color:var(--purple-deep);font-size:.95rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
+.highlight-item h4 i{color:var(--purple-primary);font-size:.85rem}
+.highlight-item p{color:var(--text-muted);font-size:.85rem;margin:0;line-height:1.5}
+
+/* 按钮 */
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--purple-primary);color:#fff;padding:.9rem 2rem;border-radius:40px;font-weight:600;text-decoration:none;box-shadow:0 10px 25px -8px rgba(124,92,191,.5);transition:all .25s;border:none;cursor:pointer;font-size:1rem;font-family:inherit}
+.cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.cta.secondary{background:#fff;color:var(--purple-primary);border:1.5px solid var(--purple-primary);box-shadow:none}
+.cta.secondary:hover{background:var(--purple-soft);color:var(--purple-deep)}
+
+/* 研学手册下载 */
+.handbook-section{
+  background:linear-gradient(135deg,#f7f2ea,#efe8ff);
+  border-radius:24px;
+  padding:2rem;
+  margin-top:2rem;
+  text-align:center;
+  border:1px dashed var(--purple-light);
+}
+.handbook-section h3{
+  color:var(--purple-deep);
+  font-size:1.25rem;
+  margin-bottom:.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+}
+.handbook-section h3 i{color:var(--purple-primary)}
+.handbook-section p{
+  color:var(--text-muted);
+  font-size:.92rem;
+  margin-bottom:1.4rem;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.handbook-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  background:var(--purple-deep);
+  color:#fff;
+  padding:.9rem 2.2rem;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 12px 28px -10px rgba(90,61,156,.6);
+  transition:all .25s;
+  font-size:.95rem;
+}
+.handbook-btn:hover{
+  background:var(--purple-primary);
+  transform:translateY(-2px);
+  box-shadow:0 18px 32px -10px rgba(124,92,191,.7);
+}
+.handbook-btn i{font-size:1rem}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .content-card{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fas fa-paint-brush"></i>
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="tag">🌲 STEAM 教学模式</span>
+  <h1>西寺沟“绿野寻踪”</h1>
+
+  <div class="meta">
+    <span><i class="fas fa-calendar-day"></i>一天</span>
+    <span><i class="fas fa-child"></i>4-6 周岁</span>
+    <span><i class="fas fa-map-marker-alt"></i>西安西寺沟</span>
+    <span><i class="fas fa-tag"></i>STEAM 教学模式</span>
+  </div>
+
+  <!-- 封面图 -->
+  <div class="banner">
+    <img src="https://picsum.photos/900/500?random=37" alt="西寺沟绿野寻踪">
+  </div>
+
+  <!-- 产品概述 -->
+  <div class="content-card">
+    <h2><i class="fas fa-lightbulb"></i>产品概述</h2>
+    <p>幼儿的 STEAM 教育是各个学科之间的融合，实现核心素养导向的深度学习，其中包括了通过以自然生态环境为代表的非正式教育场所开展情境式、体验式教育。</p>
+    <p>本项目将利用一天时间，在西安市西寺沟展开“西寺沟绿野寻踪”的沉浸式研学活动。在这趟研学中，孩子们将穿梭于茂密的林间，聆听鸟儿的歌唱，感受大地的脉搏。他们将在乡野探索导师的指导下，亲手触摸树木的纹理，观察植物的生长，探索动物的足迹，深入了解自然界的奥秘。</p>
+    <p>同时，孩子们还将参与到各种跨学科实践中，通过采集植物标本、搭建简易帐篷、创作自然艺术品等活动，将科学、技术、工程、艺术和数学的知识融入其中，感受知识的魅力与力量。</p>
+    <p>西安西寺沟地处山区，拥有得天独厚的自然资源，如山地、森林、溪流等。为了充分利用这些资源，我们特别策划了此次以山区自然资源为依托的幼儿乡村体育类研学活动，让幼儿们亲近自然，感受山区的独特魅力，参与具有山区特色的体育活动，增强幼儿的身体素质，培养幼儿的团队协作精神、环保意识以及对自然的敬畏之心。</p>
+  </div>
+
+  <!-- 研学地介绍 -->
+  <div class="content-card">
+    <h2><i class="fas fa-map-marked-alt"></i>研学地介绍</h2>
+    <p>西安西寺沟位于秦岭北麓太平峪深处，107 省道绕山而过。这里交通便利，地理位置优越。西安西寺沟沟道全长 25 公里，两边奇峰峻峭，水清树茂，自然景观众多。</p>
+    <p>西安西寺沟入内两山对持，一水中流，林野翠绿。山雀鸣叫，野花烂漫，青藤蔓草缠树，溪河清粼响石。入狭长幽折山谷，溪流穿流，野径迷乱。山幽林密，凉气怡人。</p>
+  </div>
+
+  <!-- 活动亮点 -->
+  <div class="content-card">
+    <h2><i class="fas fa-star"></i>活动亮点</h2>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h4><i class="fas fa-leaf"></i>自然探索</h4>
+        <p>徒步穿越、观察植物、寻找昆虫，培养观察力与探索精神。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-running"></i>山区体育</h4>
+        <p>“森林寻宝”“溪流接力”等特色体育活动，增强体质与团队协作。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-recycle"></i>环保行动</h4>
+        <p>垃圾捡拾、植树等环保活动，培养环保意识与对自然的敬畏。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-music"></i>山区文化</h4>
+        <p>观看山区传统歌舞、学唱山歌、制作手工艺品，感受山区文化魅力。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 行程安排 -->
+  <div class="content-card">
+    <h2><i class="fas fa-calendar-alt"></i>行程及活动安排</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>地点</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="5">第一天上午</td>
+          <td>出发</td>
+          <td>08:30-09:00</td>
+          <td>集合出发，前往西寺沟</td>
+          <td>让幼儿们亲近自然，感受山区的独特魅力</td>
+        </tr>
+        <tr>
+          <td>西寺沟</td>
+          <td>09:00-09:30</td>
+          <td>抵达西寺沟，介绍活动场地、安全注意事项及山区自然资源特色</td>
+          <td>了解山区自然资源与安全须知</td>
+        </tr>
+        <tr>
+          <td>西寺沟</td>
+          <td>09:30-10:30</td>
+          <td>山区自然探索：徒步穿越、观察植物、寻找昆虫</td>
+          <td>培养观察力和探索精神；途中设置寻找特定植物、记录昆虫种类等小任务</td>
+        </tr>
+        <tr>
+          <td>西寺沟</td>
+          <td>10:30-11:00</td>
+          <td>休息与交流</td>
+          <td>分享自然探索的发现和感受</td>
+        </tr>
+        <tr>
+          <td>西寺沟</td>
+          <td>10:30-11:00</td>
+          <td>休息与交流</td>
+          <td>分享自然探索的发现和感受</td>
+        </tr>
+        <tr>
+          <td>西寺沟</td>
+          <td>11:00-11:30</td>
+          <td>山区特色体育活动：“森林寻宝”“溪流接力”</td>
+          <td>利用山区自然资源，在游戏中锻炼身体、提高团队协作能力</td>
+        </tr>
+        <tr>
+          <td>中午</td>
+          <td>西寺沟</td>
+          <td>11:30-13:00</td>
+          <td>午餐时间</td>
+          <td>利用山区自然食材制作简餐，体验野餐乐趣</td>
+        </tr>
+        <tr>
+          <td rowspan="4">下午</td>
+          <td>西寺沟</td>
+          <td>13:00-14:00</td>
+          <td>环保主题活动：垃圾捡拾、植树</td>
+          <td>培养环保意识；邀请环保专家现场讲解山区生态环境的重要性与保护方法</td>
+        </tr>
+        <tr>
+          <td>西寺沟</td>
+          <td>14:00-14:30</td>
+          <td>休息与交流</td>
+          <td>分享环保活动的感受和体验</td>
+        </tr>
+        <tr>
+          <td>西寺沟</td>
+          <td>14:30-15:30</td>
+          <td>山区文化体验：传统歌舞表演、山区故事讲述、学唱山歌、制作手工艺品</td>
+          <td>感受山区文化的魅力，深入体验山区文化</td>
+        </tr>
+        <tr>
+          <td>西寺沟</td>
+          <td>15:30-16:00</td>
+          <td>活动总结与分享</td>
+          <td>分享收获和感受，颁发参与证书和纪念品</td>
+        </tr>
+        <tr>
+          <td>傍晚</td>
+          <td>返回</td>
+          <td>16:00-16:30</td>
+          <td>集合返程</td>
+          <td>结束愉快的研学之旅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 报名按钮 -->
+  <div class="cta-row">
+    <button class="cta" onclick="alert('前端演示：即将进入报名流程')">
+      <i class="fas fa-calendar-check"></i> 立即报名
+    </button>
+    <a class="cta secondary" href="index.html">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </div>
+
+  <!-- 研学手册下载 -->
+  <div class="handbook-section">
+    <h3><i class="fas fa-book-open"></i> 研学手册</h3>
+    <p>下载完整研学手册（PDF），包含活动详细介绍、行程安排与安全须知。</p>
+    <a class="handbook-btn" href="files/xisi-lvye-handbook.pdf" download>
+      <i class="fas fa-download"></i> 下载研学手册（PDF）
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
