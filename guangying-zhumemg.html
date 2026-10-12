@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>光影筑梦，亲子同行 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo i{color:var(--purple-primary);font-size:1.6rem}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 标签 + 标题 */
+.tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;line-height:1.35}
+.meta{color:var(--text-muted);margin-bottom:2rem;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;padding-bottom:1.2rem;border-bottom:1px solid var(--border-light)}
+.meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面图 */
+.banner{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-size:1.1rem;font-weight:600}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文内容 */
+.content-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
+.content-card h2{color:var(--purple-deep);font-size:1.35rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple-soft)}
+.content-card h2 i{color:var(--purple-primary);font-size:1.2rem}
+.content-card h3{color:var(--purple-deep);font-size:1.1rem;margin:1.5rem 0 .7rem}
+.content-card h3:first-child{margin-top:0}
+.content-card p{color:#4a4458;margin-bottom:1rem}
+.content-card ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.content-card li{margin-bottom:.4rem}
+.content-card blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+
+/* 流程时间轴 */
+.flow-list{list-style:none;margin:0;padding:0}
+.flow-item{position:relative;padding:1rem 0 1rem 2.5rem;border-left:2px dashed var(--purple-light);margin-left:.8rem}
+.flow-item:last-child{border-left-color:transparent}
+.flow-item::before{content:'';position:absolute;left:-.6rem;top:1.4rem;width:1rem;height:1rem;border-radius:50%;background:var(--purple-primary);box-shadow:0 0 0 4px var(--purple-soft)}
+.flow-item h4{color:var(--purple-deep);font-size:1.05rem;margin-bottom:.35rem}
+.flow-item p{color:var(--text-muted);font-size:.92rem;margin:0}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 亮点 */
+.highlight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.highlight-item{background:var(--purple-soft);border-radius:16px;padding:1rem 1.2rem;border-left:4px solid var(--purple-primary)}
+.highlight-item h4{color:var(--purple-deep);font-size:.95rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
+.highlight-item h4 i{color:var(--purple-primary);font-size:.85rem}
+.highlight-item p{color:var(--text-muted);font-size:.85rem;margin:0;line-height:1.5}
+
+/* 按钮 */
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--purple-primary);color:#fff;padding:.9rem 2rem;border-radius:40px;font-weight:600;text-decoration:none;box-shadow:0 10px 25px -8px rgba(124,92,191,.5);transition:all .25s;border:none;cursor:pointer;font-size:1rem;font-family:inherit}
+.cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.cta.secondary{background:#fff;color:var(--purple-primary);border:1.5px solid var(--purple-primary);box-shadow:none}
+.cta.secondary:hover{background:var(--purple-soft);color:var(--purple-deep)}
+
+/* 研学手册下载 */
+.handbook-section{
+  background:linear-gradient(135deg,#f7f2ea,#efe8ff);
+  border-radius:24px;
+  padding:2rem;
+  margin-top:2rem;
+  text-align:center;
+  border:1px dashed var(--purple-light);
+}
+.handbook-section h3{
+  color:var(--purple-deep);
+  font-size:1.25rem;
+  margin-bottom:.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+}
+.handbook-section h3 i{color:var(--purple-primary)}
+.handbook-section p{
+  color:var(--text-muted);
+  font-size:.92rem;
+  margin-bottom:1.4rem;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.handbook-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  background:var(--purple-deep);
+  color:#fff;
+  padding:.9rem 2.2rem;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 12px 28px -10px rgba(90,61,156,.6);
+  transition:all .25s;
+  font-size:.95rem;
+}
+.handbook-btn:hover{
+  background:var(--purple-primary);
+  transform:translateY(-2px);
+  box-shadow:0 18px 32px -10px rgba(124,92,191,.7);
+}
+.handbook-btn i{font-size:1rem}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .content-card{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fas fa-paint-brush"></i>
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="tag">🎬 公益特色类项目</span>
+  <h1>光影筑梦，亲子同行</h1>
+  <p style="color:var(--text-muted);margin-bottom:1rem;">—— 走进西安电影制片厂</p>
+
+  <div class="meta">
+    <span><i class="fas fa-film"></i>西安电影制片厂</span>
+    <span><i class="fas fa-child"></i>5 组乡村幼儿家庭</span>
+    <span><i class="fas fa-clock"></i>一天</span>
+    <span><i class="fas fa-tag"></i>公益 · 电影美育</span>
+  </div>
+ <!-- 封面图 -->
+  <div class="banner">
+    <img src="https://picsum.photos/900/500?random=31" alt="光影筑梦，亲子同行">
+  </div>
+
+  <!-- 一、活动主旨 -->
+  <div class="content-card">
+    <h2><i class="fas fa-heart"></i>活动主旨</h2>
+    <p>在项目盈利后，我们特别设立专项资金，定向为五个乡村幼儿家庭策划一次别开生面的亲子研学活动——走进西安电影制片厂。</p>
+    <p>活动以“光影”为线索，以“亲子”为纽带，以“研学”为核心，让孩子们从动画视角认识电影、在真实场景中触摸电影、在角色扮演中体验电影、在“大银幕”前分享电影，感受电影艺术的独特魅力，也让家长在陪伴中见证孩子的发现与成长。</p>
+  </div>
+
+  <!-- 二、活动目标 -->
+  <div class="content-card">
+    <h2><i class="fas fa-bullseye"></i>活动目标</h2>
+    <ul>
+      <li>了解西安电影制片厂的历史与变迁，感受中国电影事业的发展脉络。</li>
+      <li>近距离接触电影道具、服装和海报，认识电影制作中的实物与细节。</li>
+      <li>通过模拟拍摄和角色扮演，体验导演、演员、摄影师等不同分工，理解团队协作。</li>
+      <li>增进亲子互动，让家长与孩子在共同参与中收获陪伴与温暖。</li>
+    </ul>
+  </div>
+
+  <!-- 三、活动对象与地点 -->
+  <div class="content-card">
+    <h2><i class="fas fa-map-marker-alt"></i>活动对象与地点</h2>
+    <p><strong>活动对象：</strong>五个乡村幼儿家庭。</p>
+    <p><strong>活动地点：</strong>西安电影制片厂。</p>
+    <p><strong>活动方式：</strong>专项资金支持，志愿者全程陪伴，统一乘坐公共交通出行并安全返程。</p>
+  </div>
+
+  <!-- 四、活动流程 -->
+  <div class="content-card">
+    <h2><i class="fas fa-route"></i>活动流程</h2>
+    <ul class="flow-list">
+
+      <li class="flow-item">
+        <h4>（一）光影启程 · 集合出发</h4>
+        <p>活动开始前，志愿者向五个乡村幼儿家庭介绍活动规则与安全事项。随后，大家统一乘坐公共交通前往西安电影制片厂，带着期待开启“光影之旅”。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（二）光影初识 · 动画视角导览</h4>
+        <p>抵达后，我们为五个家庭安排生动的导览。特别从西安电影制片厂所拍摄的动画片视角切入，向孩子和家长介绍制片厂的历史与变迁。西安电影制片厂历史悠久，其历史可追溯到上世纪五十年代后期，于 1958 年正式成立，是新中国电影艺术创作与发展的重要见证。通过动画式的讲述，孩子们仿佛置身电影世界，对电影艺术与西安电影制片厂产生浓厚兴趣。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（三）光影寻宝 · 展示区参观</h4>
+        <p>稍后，我们安排志愿者带领大家走进制片厂展示区。这里陈列着各种电影道具、服装和影片海报，与动画片中熟悉的场景和角色相映成趣。孩子们兴奋地穿梭其中，用眼睛观察、用手触摸、用心感受每一件展品。志愿者耐心解答问题，帮助孩子们更深入地了解电影制作的实物与背后故事。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（四）光影片场 · 户外模拟拍摄</h4>
+        <p>随后，大家来到户外模拟拍摄区域。我们先询问孩子们喜爱的动画片，再为他们分配导演、演员、摄影师等角色，并邀请家长积极参与，扮演不同角色。孩子们兴奋地穿上电影道具服装，在志愿者指导下开始“电影拍摄之旅”。他们认真模仿动画片中的角色和动作，尽情享受电影制作的乐趣。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（五）光影首映 · 短片观看</h4>
+        <p>拍摄结束后，我们为孩子们播放他们在模拟拍摄中完成的小短片。看到自己出现在“大银幕”上，孩子们兴奋不已，纷纷分享感受。这一刻，电影不再遥远，而成为他们亲手创造的光影记忆。</p>
+      </li>
+      <li class="flow-item">
+        <h4>（五）光影首映 · 短片观看</h4>
+        <p>拍摄结束后，我们为孩子们播放他们在模拟拍摄中完成的小短片。看到自己出现在“大银幕”上，孩子们兴奋不已，纷纷分享感受。这一刻，电影不再遥远，而成为他们亲手创造的光影记忆。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（六）光影归途 · 安全返程</h4>
+        <p>最后，我们通过公共交通方式，将孩子和家长安全送回家，为这次亲子研学活动画上温暖句号。</p>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- 五、活动亮点 -->
+  <div class="content-card">
+    <h2><i class="fas fa-star"></i>活动亮点</h2>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h4><i class="fas fa-tv"></i>动画切入</h4>
+        <p>用孩子熟悉的动画语言打开电影世界，降低理解门槛。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-masks-theater"></i>沉浸体验</h4>
+        <p>参观、触摸、扮演、拍摄、观影层层递进，形成完整研学闭环。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-users"></i>亲子共演</h4>
+        <p>家长不是旁观者，而是共同创作者，增强陪伴感。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-hand-holding-heart"></i>公益温度</h4>
+        <p>专项资金支持乡村幼儿家庭，让电影美育与亲子关爱真正落地。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 六、活动意义 -->
+  <div class="content-card">
+    <h2><i class="fas fa-seedling"></i>活动意义</h2>
+    <p>这场西安电影制片厂之旅，既是一堂生动的电影艺术课，也是一次温暖的亲子陪伴行动。</p>
+    <p>孩子们在光影中看见更大的世界，在体验中种下艺术与梦想的种子；家长在共同参与中收获亲密与感动。</p>
+    <blockquote>电影的魅力，因陪伴而更加闪亮。</blockquote>
+  </div>
+
+  <!-- 行程安排 -->
+  <div class="content-card">
+    <h2><i class="fas fa-calendar-alt"></i>行程及活动安排</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>地点</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">第一天上午</td>
+          <td>陕西师范大学长安校区北门</td>
+          <td>8:30</td>
+          <td>集合、欢迎词、核对人数、分发小马甲、合影留念</td>
+          <td>研学导师介绍行程安排与注意事项</td>
+        </tr>
+        <tr>
+          <td>乘车</td>
+          <td>8:30-9:10</td>
+          <td>乘大巴车前往西安电影制片厂</td>
+          <td>途中讲解景区，并引导幼儿进行动画片知识问答小游戏</td>
+        </tr>
+        <tr>
+          <td rowspan="4">上午至下午</td>
+          <td rowspan="4">西安电影制片厂</td>
+          <td>9:25-11:25</td>
+          <td>参观游览</td>
+          <td>详细介绍建造历史与内部建筑，收集银杏叶片制作书签</td>
+        </tr>
+        <tr>
+          <td>11:30-12:00</td>
+          <td>展示区参观</td>
+          <td>参观电影道具、服装和影片海报，志愿者解答问题</td>
+        </tr>
+        <tr>
+          <td>12:00-12:30</td>
+          <td>午餐时光</td>
+          <td>享受亲子午餐</td>
+        </tr>
+        <tr>
+          <td>12:30-13:30</td>
+          <td>午休</td>
+          <td>研学导师带领幼儿午休</td>
+        </tr>
+        <tr>
+          <td rowspan="5">下午</td>
+          <td rowspan="5">西安电影制片厂</td>
+          <td>13:30-14:05</td>
+          <td>模拟拍摄体验</td>
+          <td>分配导演、演员、摄影师等角色，穿道具服装模拟拍摄</td>
+        </tr>
+        <tr>
+          <td>14:10-14:50</td>
+          <td>短片播放与反馈</td>
+          <td>播放模拟拍摄短片，进行简单反馈与分享</td>
+        </tr>
+        <tr>
+          <td>14:50-15:20</td>
+          <td>活动总结</td>
+          <td>负责人总结，家庭成员合影留念</td>
+        </tr>
+        <tr>
+          <td>15:20-16:00</td>
+          <td>返程</td>
+          <td>乘坐大巴车返回集合地点，由家长带领安全回家</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 报名按钮 -->
+  <div class="cta-row">
+    <button class="cta" onclick="alert('前端演示：即将进入报名流程')">
+      <i class="fas fa-calendar-check"></i> 立即报名
+    </button>
+    <a class="cta secondary" href="index.html">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </div>
+  <!-- 研学手册下载 -->
+  <div class="handbook-section">
+    <h3><i class="fas fa-book-open"></i> 研学手册</h3>
+    <p>下载完整研学手册（PDF），包含活动详细介绍、行程安排与安全须知。</p>
+    <a class="handbook-btn" href="files/guangying-zhumeng-handbook.pdf" download>
+      <i class="fas fa-download"></i> 下载研学手册（PDF）
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
