@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乡野同行·撕纸传情 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo i{color:var(--purple-primary);font-size:1.6rem}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 标签 + 标题 */
+.tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;line-height:1.35}
+.meta{color:var(--text-muted);margin-bottom:2rem;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;padding-bottom:1.2rem;border-bottom:1px solid var(--border-light)}
+.meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面图 */
+.banner{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-size:1.1rem;font-weight:600}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文内容 */
+.content-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
+.content-card h2{color:var(--purple-deep);font-size:1.35rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple-soft)}
+.content-card h2 i{color:var(--purple-primary);font-size:1.2rem}
+.content-card h3{color:var(--purple-deep);font-size:1.1rem;margin:1.5rem 0 .7rem}
+.content-card h3:first-child{margin-top:0}
+.content-card p{color:#4a4458;margin-bottom:1rem}
+.content-card ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.content-card li{margin-bottom:.4rem}
+.content-card blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+
+/* 流程时间轴 */
+.flow-list{list-style:none;margin:0;padding:0}
+.flow-item{position:relative;padding:1rem 0 1rem 2.5rem;border-left:2px dashed var(--purple-light);margin-left:.8rem}
+.flow-item:last-child{border-left-color:transparent}
+.flow-item::before{content:'';position:absolute;left:-.6rem;top:1.4rem;width:1rem;height:1rem;border-radius:50%;background:var(--purple-primary);box-shadow:0 0 0 4px var(--purple-soft)}
+.flow-item h4{color:var(--purple-deep);font-size:1.05rem;margin-bottom:.35rem}
+.flow-item p{color:var(--text-muted);font-size:.92rem;margin:0}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 亮点 */
+.highlight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.highlight-item{background:var(--purple-soft);border-radius:16px;padding:1rem 1.2rem;border-left:4px solid var(--purple-primary)}
+.highlight-item h4{color:var(--purple-deep);font-size:.95rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
+.highlight-item h4 i{color:var(--purple-primary);font-size:.85rem}
+.highlight-item p{color:var(--text-muted);font-size:.85rem;margin:0;line-height:1.5}
+
+/* 按钮 */
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--purple-primary);color:#fff;padding:.9rem 2rem;border-radius:40px;font-weight:600;text-decoration:none;box-shadow:0 10px 25px -8px rgba(124,92,191,.5);transition:all .25s;border:none;cursor:pointer;font-size:1rem;font-family:inherit}
+.cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.cta.secondary{background:#fff;color:var(--purple-primary);border:1.5px solid var(--purple-primary);box-shadow:none}
+.cta.secondary:hover{background:var(--purple-soft);color:var(--purple-deep)}
+
+/* 页脚返回 */
+.back-home{display:inline-flex;align-items:center;gap:.5rem;color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;margin-top:1rem}
+.back-home:hover{color:var(--purple-deep)}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .content-card{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+/* 研学手册下载 */
+.handbook-section{
+  background:linear-gradient(135deg,#f7f2ea,#efe8ff);
+  border-radius:24px;
+  padding:2rem;
+  margin-top:2rem;
+  text-align:center;
+  border:1px dashed var(--purple-light);
+}
+.handbook-section h3{
+  color:var(--purple-deep);
+  font-size:1.25rem;
+  margin-bottom:.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+}
+.handbook-section h3 i{color:var(--purple-primary)}
+.handbook-section p{
+  color:var(--text-muted);
+  font-size:.92rem;
+  margin-bottom:1.4rem;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.handbook-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  background:var(--purple-deep);
+  color:#fff;
+  padding:.9rem 2.2rem;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 12px 28px -10px rgba(90,61,156,.6);
+  transition:all .25s;
+  font-size:.95rem;
+}
+.handbook-btn:hover{
+  background:var(--purple-primary);
+  transform:translateY(-2px);
+  box-shadow:0 18px 32px -10px rgba(124,92,191,.7);
+}
+.handbook-btn i{
+  font-size:1rem;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fas fa-paint-brush"></i>
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="tag">🌿 公益特色类项目</span>
+  <h1>乡野同行·撕纸传情</h1>
+  <p style="color:var(--text-muted);margin-bottom:1rem;">—— 陕西师范大学非遗撕纸画亲子研学</p>
+
+  <div class="meta">
+    <span><i class="fas fa-university"></i>陕西师范大学</span>
+    <span><i class="fas fa-child"></i>乡村合作家庭 · 6 组</span>
+    <span><i class="fas fa-clock"></i>一天</span>
+    <span><i class="fas fa-tag"></i>公益 · 非遗美育</span>
+  </div>
+  <!-- 封面图 -->
+  <div class="banner">
+    <img src="https://picsum.photos/900/500?random=30" alt="乡野同行·撕纸传情">
+  </div>
+
+  <!-- 一、活动主旨 -->
+  <div class="content-card">
+    <h2><i class="fas fa-heart"></i>活动主旨</h2>
+    <p>为丰富乡村幼儿对中华优秀传统文化的体验，同时为陕西师范大学学前教育专业学生提供一个实践交流的平台，我们策划在陕西师范大学开展以非遗撕纸画为主题的亲子公益活动。</p>
+    <p>活动以“纸”为媒，以“撕”为趣，以“情”为线，让乡村幼儿在触摸、观察、创作、展示、分享中感受非遗撕纸画的魅力，让家长在陪伴中见证孩子的成长，也让学前教育专业学生在真实情境中提升活动组织与家园共育能力。</p>
+  </div>
+
+  <!-- 二、活动目标 -->
+  <div class="content-card">
+    <h2><i class="fas fa-bullseye"></i>活动目标</h2>
+    <ul>
+      <li>了解非遗撕纸画的起源与发展，感受中华优秀传统文化的独特魅力。</li>
+      <li>通过触摸、观察、视频导入等方式，激发幼儿的好奇心与探究欲。</li>
+      <li>通过亲子共同完成构图、撕纸、粘贴、定稿、二次创作，锻炼幼儿动手能力，增强其合作意识与安全意识。</li>
+      <li>通过作品展示、讲解、心情图章和鼓励印章，增强幼儿的表达力与自信心。</li>
+      <li>为陕西师范大学学前教育专业学生提供实践交流平台，促进专业成长。</li>
+    </ul>
+  </div>
+
+  <!-- 三、活动对象与地点 -->
+  <div class="content-card">
+    <h2><i class="fas fa-map-marker-alt"></i>活动对象与地点</h2>
+    <p><strong>活动对象：</strong>线上报名前 6 组乡村合作家庭。</p>
+    <p><strong>活动地点：</strong>陕西师范大学美术教室及大学校园。</p>
+    <p><strong>研学地介绍：</strong>陕西师范大学是国内双一流高校，拥有丰富的教育教学资源。学前教育专业为国家级一流本科专业建设点、省级特色专业。2024 年最新专业排名中，陕西师大学前教育位列全国第 4，达到 A+ 水平，具有十分专业的幼儿教育资源。</p>
+    <p><strong>活动方式：</strong>线上发布、线上报名，公益开展，学前教育专业学生志愿者全程支持与引导。</p>
+  </div>
+  <!-- 四、活动流程 -->
+  <div class="content-card">
+    <h2><i class="fas fa-route"></i>活动流程</h2>
+    <ul class="flow-list">
+
+      <li class="flow-item">
+        <h4>（一）乡野邀约 · 线上报名</h4>
+        <p>由于美术教室空间有限，活动采取线上发布、线上报名的方式，取前 6 组乡村合作家庭。报名成功后，统一告知活动时间、地点与注意事项，让家庭带着期待走进师大校园。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（二）指尖初遇 · 触摸揭秘</h4>
+        <p>在美术教室，首先让小朋友们用手亲身触摸作品，以问题引入：“上面的图案是画上去的吗？如果不是，猜一猜是怎样创作的？”孩子们惊喜地发现，图案原来是纸片粘贴而成的。通过触摸体验，孩子们对撕纸画产生了第一重好奇。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（三）纸艺初识 · 视频导览</h4>
+        <p>在亲身体验的基础上，我们为 6 个孩子进行视频导入，让小朋友们更加系统地了解非遗撕纸画的起源与发展等知识。同时，引导孩子们细致观察提前制作好的几幅撕纸画作品。经过两个有趣的引入环节，孩子们跃跃欲试，对非遗撕纸画产生了浓厚兴趣。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（四）亲子共创 · 撕纸传情</h4>
+        <p>紧接着，我们引导家长和孩子们一起开始制作撕纸画。家长和孩子温馨地讨论创作主题，并在家长的陪同指导下，以孩子为主完成撕纸画的构图、撕纸、粘贴、定稿、二次创作等环节。</p>
+        <p style="margin-top:.5rem;">在这个过程中，我们设计了家长与孩子的互动提问。家长可以引导孩子用儿童的视角去看待文化创作、文化传承，在孩子们心中播撒下发扬中华优秀传统文化的种子。同时，家长也会提醒孩子们在手工创作中培养合作意识，并注意安全事项。这一环节主要是家长与孩子之间的亲密互动，让孩子在亲子陪伴中真正学习知识经验，锻炼实践能力，以达到真正的研学目的。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（五）作品展示 · 印章认证</h4>
+        <p>之后，我们来到展示阶段。邀请孩子和家长上台展示共同创造的作品，并为大家讲解自己创作的想法，以及在此过程中遇到的难题、如何克服难题等。随后，让孩子在作品上画下参与此次活动的心情图章，我们也盖上鼓励认证的印章。看到自己完成的最终作品以及其他小朋友的作品，孩子们都兴奋不已，互相分享自己的小成就。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（六）校园漫步 · 分享传情</h4>
+        <p>下午，继育儿经验圆桌会后，我们组织带领孩子们在大学校园内游览，并鼓励孩子们将自己的撕纸画创作展示给行人。当小孩子与自己创作的撕纸画被大哥哥大姐姐们围住夸赞时，小孩子们都用腼腆中带着自豪的笑声表达着自己的快乐。</p>
+      </li>
+
+      <li class="flow-item">
+        <h4>（七）温馨归程 · 西新门送别</h4>
+        <p>至此，一天的活动结束。我们将大家送出新西门，随后家长们自行安排带着孩子回家，为这次“乡野同行·撕纸传情”亲子研学活动画上温暖句号。</p>
+      </li>
+
+    </ul>
+  </div>
+  <!-- 五、活动亮点 -->
+  <div class="content-card">
+    <h2><i class="fas fa-star"></i>活动亮点</h2>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h4><i class="fas fa-dragon"></i>非遗为魂</h4>
+        <p>以撕纸画为载体，让传统文化可触、可感、可创。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-users"></i>亲子共创</h4>
+        <p>以孩子为主、家长为辅，强调陪伴式学习与互动。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-university"></i>高校赋能</h4>
+        <p>依托陕西师范大学学前教育专业优势，为学生提供实践平台。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-award"></i>展示激励</h4>
+        <p>心情图章、鼓励印章、校园分享，增强自信与表达。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-hand-holding-heart"></i>公益温度</h4>
+        <p>定向服务乡村合作家庭，让美育与传统文化走进童年。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 六、活动意义 -->
+  <div class="content-card">
+    <h2><i class="fas fa-seedling"></i>活动意义</h2>
+    <p>这场“乡野同行·撕纸传情”活动，既是一堂非遗美育课，也是一次亲子陪伴行动，更是一次高校学前教育专业与乡村家庭的双向奔赴。</p>
+    <p>孩子们在撕、贴、画、讲中感受中华优秀传统文化的温度，在展示与夸赞中收获自信；家长在陪伴中学会倾听与支持；陕西师范大学学前教育专业学生在真实实践中提升专业能力。</p>
+    <blockquote>纸片虽小，可传情；乡野虽远，可同行。</blockquote>
+  </div>
+
+  <!-- 行程安排 -->
+  <div class="content-card">
+    <h2><i class="fas fa-calendar-alt"></i>行程及活动安排</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>地点</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">第一天上午</td>
+          <td>陕西师范大学新西门</td>
+          <td>9:00</td>
+          <td>集合、欢迎词、核对人数、分发小马甲、合影留念</td>
+          <td>研学导师介绍行程安排与注意事项</td>
+        </tr>
+        <tr>
+          <td>陕西师范大学校园内</td>
+          <td>9:20-9:40</td>
+          <td>破冰活动</td>
+          <td>“找呀找呀找朋友”“小小名片卡”趣味互动，让孩子们相互熟悉</td>
+        </tr>
+        <tr>
+          <td rowspan="8">下午</td>
+          <td rowspan="8">陕西师范大学田楼 419 美术教室</td>
+          <td>9:40-10:00</td>
+          <td>撕纸画引入</td>
+          <td>讲解非遗撕纸画起源与发展，观看介绍视频，激发兴趣</td>
+        </tr>
+        <tr>
+          <td>10:00-10:30</td>
+          <td>亲子撕纸画初步创作</td>
+          <td>家庭成员合作完成主题确定、构图、撕纸、粘贴</td>
+        </tr>
+        <tr>
+          <td>10:30-11:00</td>
+          <td>亲子撕纸画分享</td>
+          <td>6 组家庭依次上台分享创作想法、过程与难题解决</td>
+        </tr>
+        <tr>
+          <td>11:00-11:30</td>
+          <td>点评与再创作</td>
+          <td>研学导师点评，6 组家庭相互借鉴，进行二次创作</td>
+        </tr>
+        <tr>
+          <td>11:30-13:30</td>
+          <td>午餐及午休</td>
+          <td>家庭自由安排，导师可带领前往学校食堂</td>
+        </tr>
+        <tr>
+          <td>13:30-14:30</td>
+          <td>家长育儿经验交流圆桌会</td>
+          <td>专业导师分享，家长互相交流；同时研学导师带幼儿进行撕纸画文创体验</td>
+        </tr>
+        <tr>
+          <td>14:40-15:40</td>
+          <td>户外活动分享</td>
+          <td>鼓励孩子将成品展示给行人，化身小小传播者介绍</td>
+        </tr>
+        <tr>
+          <td>15:40-16:10</td>
+          <td>活动总结</td>
+          <td>负责人总结，家庭成员合影留念，结束后家长带孩子安全回家</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 报名按钮 -->
+  <div class="cta-row">
+    <button class="cta" onclick="alert('前端演示：即将进入报名流程')">
+      <i class="fas fa-calendar-check"></i> 立即报名
+    </button>
+    <a class="cta secondary" href="index.html">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </div>
+<!-- 研学手册下载 -->
+<div class="handbook-section">
+  <h3><i class="fas fa-book-open"></i> 研学手册</h3>
+  <p>下载完整研学手册（PDF），包含活动详细介绍、行程安排与安全须知。</p>
+  <a class="handbook-btn" href="files/xiangye-tongxing-handbook.pdf" download>
+    <i class="fas fa-download"></i> 下载研学手册（PDF）
+  </a>
+</div>
+
+</div>
+</body>
+</html>
