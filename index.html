@@ -26,7 +26,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 /* 导航 */
 .navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:var(--shadow-sm);margin-bottom:2rem}
 .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.4rem;color:var(--purple-deep);text-decoration:none}
-.logo i{color:var(--purple-primary);font-size:1.8rem;filter:drop-shadow(0 0 6px rgba(124,92,191,.4))}
+.logo img{
+  height:42px;
+  width:auto;
+  display:block;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(124,92,191,.15);
+}
 .nav-links{display:flex;gap:2.2rem;font-weight:500;font-size:.95rem;align-items:center}
 .nav-links a{color:var(--text-muted);text-decoration:none;transition:color .2s;position:relative}
 .nav-links a:hover{color:var(--purple-primary)}
@@ -152,10 +158,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
   <!-- ===== 导航栏 ===== -->
   <nav class="navbar fade-up">
-    <a href="index.html" class="logo">
-      <i class="fas fa-paint-brush"></i>
-      <span>童行乡野</span>
-    </a>
+<a href=" " class="logo">
+  < img src="logo.jpg" alt="童行乡野" style="height:42px;width:auto;border-radius:10px;">
+  <span>童行乡野</span>
+</a >
     <div class="nav-links">
       <a href="index.html">首页</a>
       <a href="about.html">关于我们</a>
@@ -164,7 +170,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
       </button>
     </div>
   </nav>
-
+<!-- 首页大 Logo -->
+<div style="text-align:center;padding:1rem 0 0.5rem;" class="fade-up">
+  < img src="logo.jpg" alt="童行乡野" style="width:140px;height:auto;border-radius:20px;box-shadow:0 12px 30px -10px rgba(124,92,191,.35);">
+</div>
   <!-- ===== 搜索 ===== -->
   <section class="search-section fade-up delay-1">
     <div class="search-box">
