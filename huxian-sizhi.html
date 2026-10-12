@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>户县特色撕纸画研学 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo i{color:var(--purple-primary);font-size:1.6rem}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 标签 + 标题 */
+.tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;line-height:1.35}
+.meta{color:var(--text-muted);margin-bottom:2rem;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;padding-bottom:1.2rem;border-bottom:1px solid var(--border-light)}
+.meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面图 */
+.banner{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-size:1.1rem;font-weight:600}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文内容 */
+.content-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
+.content-card h2{color:var(--purple-deep);font-size:1.35rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple-soft)}
+.content-card h2 i{color:var(--purple-primary);font-size:1.2rem}
+.content-card h3{color:var(--purple-deep);font-size:1.1rem;margin:1.5rem 0 .7rem}
+.content-card h3:first-child{margin-top:0}
+.content-card p{color:#4a4458;margin-bottom:1rem}
+.content-card ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.content-card li{margin-bottom:.4rem}
+.content-card blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 亮点 */
+.highlight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.highlight-item{background:var(--purple-soft);border-radius:16px;padding:1rem 1.2rem;border-left:4px solid var(--purple-primary)}
+.highlight-item h4{color:var(--purple-deep);font-size:.95rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
+.highlight-item h4 i{color:var(--purple-primary);font-size:.85rem}
+.highlight-item p{color:var(--text-muted);font-size:.85rem;margin:0;line-height:1.5}
+
+/* 按钮 */
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--purple-primary);color:#fff;padding:.9rem 2rem;border-radius:40px;font-weight:600;text-decoration:none;box-shadow:0 10px 25px -8px rgba(124,92,191,.5);transition:all .25s;border:none;cursor:pointer;font-size:1rem;font-family:inherit}
+.cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.cta.secondary{background:#fff;color:var(--purple-primary);border:1.5px solid var(--purple-primary);box-shadow:none}
+.cta.secondary:hover{background:var(--purple-soft);color:var(--purple-deep)}
+
+/* 研学手册下载 */
+.handbook-section{
+  background:linear-gradient(135deg,#f7f2ea,#efe8ff);
+  border-radius:24px;
+  padding:2rem;
+  margin-top:2rem;
+  text-align:center;
+  border:1px dashed var(--purple-light);
+}
+.handbook-section h3{
+  color:var(--purple-deep);
+  font-size:1.25rem;
+  margin-bottom:.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+}
+.handbook-section h3 i{color:var(--purple-primary)}
+.handbook-section p{
+  color:var(--text-muted);
+  font-size:.92rem;
+  margin-bottom:1.4rem;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.handbook-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  background:var(--purple-deep);
+  color:#fff;
+  padding:.9rem 2.2rem;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 12px 28px -10px rgba(90,61,156,.6);
+  transition:all .25s;
+  font-size:.95rem;
+}
+.handbook-btn:hover{
+  background:var(--purple-primary);
+  transform:translateY(-2px);
+  box-shadow:0 18px 32px -10px rgba(124,92,191,.7);
+}
+.handbook-btn i{font-size:1rem}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .content-card{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fas fa-paint-brush"></i>
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="tag">🎨 K-STAR 跨学科教育类</span>
+  <h1>户县特色撕纸画研学</h1>
+
+  <div class="meta">
+    <span><i class="fas fa-calendar-day"></i>一日游</span>
+    <span><i class="fas fa-child"></i>4-6 岁</span>
+    <span><i class="fas fa-map-marker-alt"></i>陕西户县</span>
+    <span><i class="fas fa-tag"></i>K-STAR 系列</span>
+  </div>
+
+  <!-- 封面图 -->
+  <div class="banner">
+    <img src="https://picsum.photos/900/500?random=36" alt="户县特色撕纸画研学">
+  </div>
+
+  <!-- 产品概述 -->
+  <div class="content-card">
+    <h2><i class="fas fa-lightbulb"></i>产品概述</h2>
+    <p>陕西户县的农民画以其独特的艺术风格和丰富的文化内涵，成为乡村非遗文化的重要代表。为了让幼儿们更好地了解和传承这一宝贵的文化遗产，我们特别策划了此次户县农民画乡村非遗文化研学活动。</p>
+    <p>幼儿们了解户县农民画的历史、特点及其文化内涵。通过亲身体验农民画的创作过程，激发幼儿们的艺术兴趣和创造力。培养幼儿们对乡村非遗文化的认识和尊重，增强他们的文化自信，增强幼儿的历史文化素养和人文素质，提高幼儿的审美、人文情感，还能激发幼儿对知识的探究和学习兴趣，培养好奇心、探索精神和创新意识。</p>
+  </div>
+
+  <!-- 活动简介 -->
+  <div class="content-card">
+    <h2><i class="fas fa-book-open"></i>活动简介</h2>
+    <p>户县，这片肥沃的土地上，不仅孕育了丰富的农作物，更滋养了独特的农民画艺术。我们将利用闲暇时光，深入户县，探寻这一民间艺术的魅力所在，感受农民画所传递的乡土风情和深厚文化底蕴。</p>
+    <p>户县农民画，源于民间，扎根于田野，是农民们用画笔描绘自己生活、表达情感的艺术形式。这些画作色彩鲜艳、构图饱满，充满了浓厚的乡土气息和生活情趣。在户县的乡村，我们将参观农民画工作室和展览馆，近距离欣赏这些画作，感受农民画家们对生活的热爱和对艺术的追求。</p>
+    <p>除了欣赏画作，我们还将参与农民画的制作过程。在画家的指导下，我们将学习基本的绘画技巧，尝试用画笔描绘自己心中的乡村景象。通过亲手制作，我们将更加深入地理解农民画的艺术魅力和文化内涵。</p>
+    <p>此外，我们还将走进户县的田间地头，感受农民们的劳作生活。在这里，我们将与农民们交流，了解他们的生活习惯、风土人情和民间故事，从而更加全面地理解农民画的创作背景和艺术内涵。</p>
+  </div>
+
+  <!-- 活动亮点 -->
+  <div class="content-card">
+    <h2><i class="fas fa-star"></i>活动亮点</h2>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h4><i class="fas fa-child"></i>K-Kid 幼儿</h4>
+        <p>以幼儿为主体，全程围绕低龄儿童设计体验环节。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-eye"></i>S-See 实地观察</h4>
+        <p>实地探访户县，让孩子亲身感受农民画的魅力与创作过程。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-hand-sparkles"></i>T-Try 动手尝试</h4>
+        <p>在专业指导下，孩子们亲自动手创作农民画，体验传统手工艺的乐趣。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-hands-helping"></i>A-Act 积极参与</h4>
+        <p>通过公益活动和亲子互动，增进亲子关系，培养孩子们的社会责任感。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-share-alt"></i>R-Record 记录分享</h4>
+        <p>用多种方式记录活动瞬间，分享成果与体验。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 行程安排 -->
+  <div class="content-card">
+    <h2><i class="fas fa-calendar-alt"></i>行程及活动安排</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>地点</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4">第一天上午</td>
+          <td>出发</td>
+          <td>08:30-09:00</td>
+          <td>集合出发，前往户县农民画艺术馆</td>
+          <td>指导师简要介绍户县文化，增强幼儿兴趣</td>
+        </tr>
+        <tr>
+          <td>艺术馆</td>
+          <td>09:00-09:30</td>
+          <td>抵达艺术馆，介绍活动安排和注意事项</td>
+          <td>提高幼儿对陕西户县文化的认识和理解，了解这一宝贵的文化遗产</td>
+        </tr>
+        <tr>
+          <td>艺术馆</td>
+          <td>09:30-10:30</td>
+          <td>农民画艺术讲座</td>
+          <td>邀请专业讲解员介绍户县农民画的历史背景、艺术特点及其文化意义</td>
+        </tr>
+        <tr>
+          <td>艺术馆</td>
+          <td>10:30-11:00</td>
+          <td>互动问答环节</td>
+          <td>讲解员提问，引导幼儿思考回答；展示经典农民画作品，感受其艺术魅力</td>
+        </tr>
+        <tr>
+          <td>中午</td>
+          <td>当地餐馆</td>
+          <td>11:00-12:00</td>
+          <td>午餐时间</td>
+          <td>享用乡村特色午餐，体验乡村生活，自由活动及休息</td>
+        </tr>
+        <tr>
+           <td rowspan="3">下午</td>
+          <td>艺术馆</td>
+          <td>12:30-13:30</td>
+          <td>农民画创作体验</td>
+          <td>提供绘画材料和工具，让幼儿亲手尝试农民画创作</td>
+        </tr>
+        <tr>
+          <td>艺术馆</td>
+          <td>13:30-14:30</td>
+          <td>作品展示与交流</td>
+          <td>幼儿展示作品并分享创作感受；老师或专业画家现场指导与评价</td>
+        </tr>
+        <tr>
+          <td>艺术馆</td>
+          <td>14:30-15:00</td>
+          <td>乡村非遗文化体验</td>
+          <td>邀请当地非遗传承人展示剪纸、刺绣等项目，幼儿参与体验</td>
+        </tr>
+        <tr>
+          <td rowspan="2">晚上</td>
+          <td>返回</td>
+          <td>15:00-15:30</td>
+          <td>活动总结与合影</td>
+          <td>老师总结，强调乡村非遗文化的重要性和价值；全体合影留念</td>
+        </tr>
+        <tr>
+          <td>返回</td>
+          <td>15:30-16:00</td>
+          <td>集合返程</td>
+          <td>乘车返回出发地，结束愉快的研学活动，巩固研学成果</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 报名按钮 -->
+  <div class="cta-row">
+    <button class="cta" onclick="alert('前端演示：即将进入报名流程')">
+      <i class="fas fa-calendar-check"></i> 立即报名
+    </button>
+    <a class="cta secondary" href="index.html">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </div>
+
+  <!-- 研学手册下载 -->
+  <div class="handbook-section">
+    <h3><i class="fas fa-book-open"></i> 研学手册</h3>
+    <p>下载完整研学手册（PDF），包含活动详细介绍、行程安排与安全须知。</p>
+    <a class="handbook-btn" href="files/huxian-sizhi-handbook.pdf" download>
+      <i class="fas fa-download"></i> 下载研学手册（PDF）
+    </a>
+  </div>
+
+</div>
+</body>
+</html> 
