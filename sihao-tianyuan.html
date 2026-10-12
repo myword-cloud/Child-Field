@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四皓田园·探秘小侠 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo i{color:var(--purple-primary);font-size:1.6rem}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 标签 + 标题 */
+.tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;line-height:1.35}
+.meta{color:var(--text-muted);margin-bottom:2rem;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;padding-bottom:1.2rem;border-bottom:1px solid var(--border-light)}
+.meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面图 */
+.banner{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-size:1.1rem;font-weight:600}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文内容 */
+.content-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
+.content-card h2{color:var(--purple-deep);font-size:1.35rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple-soft)}
+.content-card h2 i{color:var(--purple-primary);font-size:1.2rem}
+.content-card h3{color:var(--purple-deep);font-size:1.1rem;margin:1.5rem 0 .7rem}
+.content-card h3:first-child{margin-top:0}
+.content-card p{color:#4a4458;margin-bottom:1rem}
+.content-card ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.content-card li{margin-bottom:.4rem}
+.content-card blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 亮点 */
+.highlight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.highlight-item{background:var(--purple-soft);border-radius:16px;padding:1rem 1.2rem;border-left:4px solid var(--purple-primary)}
+.highlight-item h4{color:var(--purple-deep);font-size:.95rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
+.highlight-item h4 i{color:var(--purple-primary);font-size:.85rem}
+.highlight-item p{color:var(--text-muted);font-size:.85rem;margin:0;line-height:1.5}
+
+/* 按钮 */
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--purple-primary);color:#fff;padding:.9rem 2rem;border-radius:40px;font-weight:600;text-decoration:none;box-shadow:0 10px 25px -8px rgba(124,92,191,.5);transition:all .25s;border:none;cursor:pointer;font-size:1rem;font-family:inherit}
+.cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.cta.secondary{background:#fff;color:var(--purple-primary);border:1.5px solid var(--purple-primary);box-shadow:none}
+.cta.secondary:hover{background:var(--purple-soft);color:var(--purple-deep)}
+
+/* 研学手册下载 */
+.handbook-section{
+  background:linear-gradient(135deg,#f7f2ea,#efe8ff);
+  border-radius:24px;
+  padding:2rem;
+  margin-top:2rem;
+  text-align:center;
+  border:1px dashed var(--purple-light);
+}
+.handbook-section h3{
+  color:var(--purple-deep);
+  font-size:1.25rem;
+  margin-bottom:.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+}
+.handbook-section h3 i{color:var(--purple-primary)}
+.handbook-section p{
+  color:var(--text-muted);
+  font-size:.92rem;
+  margin-bottom:1.4rem;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.handbook-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  background:var(--purple-deep);
+  color:#fff;
+  padding:.9rem 2.2rem;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 12px 28px -10px rgba(90,61,156,.6);
+  transition:all .25s;
+  font-size:.95rem;
+}
+.handbook-btn:hover{
+  background:var(--purple-primary);
+  transform:translateY(-2px);
+  box-shadow:0 18px 32px -10px rgba(124,92,191,.7);
+}
+.handbook-btn i{font-size:1rem}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .content-card{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fas fa-paint-brush"></i>
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="tag">🌾 IBT 农业生态体验类</span>
+  <h1>四皓田园，探秘小侠</h1>
+  <p style="color:var(--text-muted);margin-bottom:1rem;">——“童行乡野”亲子奇遇</p>
+
+  <div class="meta">
+    <span><i class="fas fa-calendar-day"></i>一天</span>
+    <span><i class="fas fa-child"></i>3-6 岁</span>
+    <span><i class="fas fa-map-marker-alt"></i>西安市长安区四皓村</span>
+    <span><i class="fas fa-tag"></i>IBT 农业生态体验类</span>
+  </div>
+
+  <!-- 封面图 -->
+  <div class="banner">
+    <img src="https://picsum.photos/900/500?random=34" alt="四皓田园，探秘小侠">
+  </div>
+
+  <!-- 产品概述 -->
+  <div class="content-card">
+    <h2><i class="fas fa-lightbulb"></i>产品概述</h2>
+    <p>西安市长安区四皓村以其丰富的生态农业资源和优质的农产品而闻名，田园风光与农耕文化相融，是体验乡村生态、感受农耕魅力的重要场所，也为开展幼儿自然教育、劳动教育提供了生动课堂。</p>
+    <p>依托这一生态资源，我们特别策划四皓村幼儿乡村生态农业亲子研学活动，面向 0-6 岁幼儿家庭及幼儿园、亲子机构。活动以“亲子共学、寓教于乐”为特色，设置田园参观、果蔬采摘、农事体验、自然手工、亲子游戏等低龄友好环节，让幼儿在陪伴中了解生态农业的概念、特点和优势，通过实地观察与体验增强对自然和环境的认识与尊重，培养劳动意识和团队协作精神。</p>
+  </div>
+
+  <!-- 研学地介绍 -->
+  <div class="content-card">
+    <h2><i class="fas fa-map-marked-alt"></i>研学地介绍</h2>
+    <p>四皓村位于西安长安区太乙宫街道，是秦岭周边众多村落中的一个。相传商山四皓曾在此隐居，赋予了它深厚的历史文化底蕴；自然资源方面，它有着独特的地理位置，临近终南山和太乙峪河，展现出别具特色的自然景观。</p>
+    <p>村中建有村史馆，记录着四皓村的历史变迁与乡村记忆，为研学活动增添了人文厚度。</p>
+  </div>
+
+  <!-- 活动亮点 -->
+  <div class="content-card">
+    <h2><i class="fas fa-star"></i>活动亮点</h2>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h4><i class="fas fa-seedling"></i>生态农业</h4>
+        <p>了解生态农业的概念、特点和优势，感受乡村生态之美。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-apple-alt"></i>果蔬采摘</h4>
+        <p>亲手采摘蔬菜水果，体验收获的喜悦与劳动的乐趣。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-users"></i>亲子共学</h4>
+        <p>家长与孩子共同参与，在陪伴中寓教于乐。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-hand-holding-heart"></i>低龄友好</h4>
+        <p>面向 0-6 岁幼儿设计，环节轻松有趣、安全可控。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 行程安排 -->
+  <div class="content-card">
+    <h2><i class="fas fa-calendar-alt"></i>行程及活动安排</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>地点</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3">第一天上午</td>
+          <td>陕西师范大学长安校区北门</td>
+          <td>8:30</td>
+          <td>集合、核对人数、致欢迎词、分发小马甲、合影留念</td>
+          <td>研学导师介绍行程安排与注意事项</td>
+        </tr>
+        <tr>
+          <td>乘车</td>
+          <td>8:30-9:00</td>
+          <td>乘大巴车前往四皓村</td>
+          <td>途中讲解景区，并引导幼儿进行四皓村知识问答小游戏</td>
+        </tr>
+        <tr>
+          <td>四皓村</td>
+          <td>9:00-9:30</td>
+          <td>抵达四皓村，介绍活动安排和注意事项</td>
+          <td>研学导师讲解整个村落的历史，阐述当天活动安排</td>
+        </tr>
+        <tr>
+          <td rowspan="4">第一天下午</td>
+          <td>四皓村</td>
+          <td>9:30-10:30</td>
+          <td>生态农业知识讲座</td>
+          <td>展示四皓村的生态农业资源和农产品，让幼儿了解其品质和口感</td>
+        </tr>
+        <tr>
+          <td>四皓村</td>
+          <td>10:30-11:30</td>
+          <td>农田参观与体验</td>
+          <td>参观农田，观察蔬菜、水果和花卉的生长情况，亲手体验种植过程（如浇水、施肥等）</td>
+        </tr>
+        <tr>
+          <td>农家乐</td>
+          <td>11:30-12:30</td>
+          <td>午餐</td>
+          <td>在四皓村的农家乐享用乡村特色午餐，体验乡村生活</td>
+        </tr>
+        <tr>
+          <td>四皓村</td>
+          <td>13:00-14:00</td>
+          <td>农产品采摘活动</td>
+          <td>组织幼儿进行农产品采摘，如摘取蔬菜、水果等</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 报名按钮 -->
+  <div class="cta-row">
+    <button class="cta" onclick="alert('前端演示：即将进入报名流程')">
+      <i class="fas fa-calendar-check"></i> 立即报名
+    </button>
+    <a class="cta secondary" href="index.html">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </div>
+
+  <!-- 研学手册下载 -->
+  <div class="handbook-section">
+    <h3><i class="fas fa-book-open"></i> 研学手册</h3>
+    <p>下载完整研学手册（PDF），包含活动详细介绍、行程安排与安全须知。</p>
+    <a class="handbook-btn" href="files/sihao-tianyuan-handbook.pdf" download>
+      <i class="fas fa-download"></i> 下载研学手册（PDF）
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
