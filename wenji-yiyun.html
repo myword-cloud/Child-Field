@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>探寻文姬遗韵·传承古韵新风 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo i{color:var(--purple-primary);font-size:1.6rem}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 标签 + 标题 */
+.tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;line-height:1.35}
+.meta{color:var(--text-muted);margin-bottom:2rem;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;padding-bottom:1.2rem;border-bottom:1px solid var(--border-light)}
+.meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面图 */
+.banner{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-size:1.1rem;font-weight:600}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文内容 */
+.content-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
+.content-card h2{color:var(--purple-deep);font-size:1.35rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple-soft)}
+.content-card h2 i{color:var(--purple-primary);font-size:1.2rem}
+.content-card h3{color:var(--purple-deep);font-size:1.1rem;margin:1.5rem 0 .7rem}
+.content-card h3:first-child{margin-top:0}
+.content-card p{color:#4a4458;margin-bottom:1rem}
+.content-card ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.content-card li{margin-bottom:.4rem}
+.content-card blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 亮点 */
+.highlight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.highlight-item{background:var(--purple-soft);border-radius:16px;padding:1rem 1.2rem;border-left:4px solid var(--purple-primary)}
+.highlight-item h4{color:var(--purple-deep);font-size:.95rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
+.highlight-item h4 i{color:var(--purple-primary);font-size:.85rem}
+.highlight-item p{color:var(--text-muted);font-size:.85rem;margin:0;line-height:1.5}
+
+/* 按钮 */
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--purple-primary);color:#fff;padding:.9rem 2rem;border-radius:40px;font-weight:600;text-decoration:none;box-shadow:0 10px 25px -8px rgba(124,92,191,.5);transition:all .25s;border:none;cursor:pointer;font-size:1rem;font-family:inherit}
+.cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.cta.secondary{background:#fff;color:var(--purple-primary);border:1.5px solid var(--purple-primary);box-shadow:none}
+.cta.secondary:hover{background:var(--purple-soft);color:var(--purple-deep)}
+
+/* 研学手册下载 */
+.handbook-section{
+  background:linear-gradient(135deg,#f7f2ea,#efe8ff);
+  border-radius:24px;
+  padding:2rem;
+  margin-top:2rem;
+  text-align:center;
+  border:1px dashed var(--purple-light);
+}
+.handbook-section h3{
+  color:var(--purple-deep);
+  font-size:1.25rem;
+  margin-bottom:.6rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+}
+.handbook-section h3 i{color:var(--purple-primary)}
+.handbook-section p{
+  color:var(--text-muted);
+  font-size:.92rem;
+  margin-bottom:1.4rem;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.handbook-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  background:var(--purple-deep);
+  color:#fff;
+  padding:.9rem 2.2rem;
+  border-radius:40px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 12px 28px -10px rgba(90,61,156,.6);
+  transition:all .25s;
+  font-size:.95rem;
+}
+.handbook-btn:hover{
+  background:var(--purple-primary);
+  transform:translateY(-2px);
+  box-shadow:0 18px 32px -10px rgba(124,92,191,.7);
+}
+.handbook-btn i{font-size:1rem}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .content-card{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <i class="fas fa-paint-brush"></i>
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="tag">📜 K-STAR 人文历史游览类</span>
+  <h1>探寻文姬遗韵·传承古韵新风</h1>
+  <p style="color:var(--text-muted);margin-bottom:1rem;">—— 蓝田县蔡文姬纪念馆一日游</p>
+
+  <div class="meta">
+    <span><i class="fas fa-calendar-day"></i>一日游</span>
+    <span><i class="fas fa-child"></i>4-6 周岁</span>
+    <span><i class="fas fa-map-marker-alt"></i>蓝田县蔡文姬纪念馆</span>
+    <span><i class="fas fa-tag"></i>K-STAR 系列</span>
+  </div>
+
+  <!-- 封面图 -->
+  <div class="banner">
+    <img src="https://picsum.photos/900/500?random=33" alt="蔡文姬纪念馆">
+  </div>
+
+  <!-- 产品概述 -->
+  <div class="content-card">
+    <h2><i class="fas fa-lightbulb"></i>产品概述</h2>
+    <p>蔡文姬纪念馆占地面积 3630 平方米，是国家 AAA 级景区，现已成为陕西省重要的历史文化教育基地和爱国主义教育基地。</p>
+    <p>为了让幼儿们更好地了解这段历史，感受传统文化的魅力，让幼儿们了解蔡文姬的历史背景和文学成就，激发幼儿们的文化认同感和家国情怀，培养幼儿们的审美能力和文化自信，我们特别策划了此次蓝田县蔡文姬纪念馆幼儿乡村文化研学活动。</p>
+  </div>
+  <!-- 活动简介 -->
+  <div class="content-card">
+    <h2><i class="fas fa-book-open"></i>活动简介</h2>
+    <p>蓝田，这片钟灵毓秀的土地上，不仅孕育了璀璨的文明，更滋养了深厚的文脉。我们将利用闲暇时光，深入蓝田县蔡文姬纪念馆，探寻这位东汉才女的传奇魅力，感受其跌宕人生中所传递的坚韧精神与家国情怀。</p>
+    <p>蔡文姬，名琰，是东汉著名文学史家蔡邕的女儿。她博学多才，精通音律，其五言体代表诗作《悲愤诗》被后人演绎为著名的古琴名曲《胡笳十八拍》。纪念馆坐落于西安市蓝田县三里镇蔡王村，占地面积 3630 平方米，是国家 AAA 级景区，馆内设有《蔡文姬生平展》《蓝田文物展》《碑石展》等陈列，其中《蔡文姬生平展》以“蔡文姬和她的时代”为主题，分七个单元详细展示其生平事迹与文学成就。此外，馆内还建有《胡笳十八拍》雕塑园，并保留有历经 1800 余年的蔡文姬墓塚，林木葱郁，庄严肃穆。</p>
+    <p>除了参观展陈，我们将参与蔡文姬纪念馆的特色研学活动。在“小小讲解员”培训课程中，孩子们将在专业讲解员的指导下学习发声技巧、站姿礼仪与历史知识，亲身体验如何将蔡文姬的故事转化为生动流畅的现场讲解，在深度参与中感受历史文化的魅力。我们还将走进展厅，近距离观摩北魏至民国时期碑石 20 余件，触摸岁月沉淀的碑刻文字，品读传世名篇的笔墨风骨。</p>
+    <p>此外，我们还将参观蔡文姬纪念馆所在的蔡王村，了解村名背后王氏家族为蔡文姬守墓 1800 多年的感人故事。在清明节前后，这里还会组织学生扫墓纪念等常态化研学活动，让孩子们在缅怀先贤的过程中，更加深刻地理解蔡文姬潜心抄录蔡邕遗著、完成《续后汉书》文化工程的坚韧与执着。</p>
+  </div>
+
+  <!-- 活动亮点 -->
+  <div class="content-card">
+    <h2><i class="fas fa-star"></i>活动亮点</h2>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <h4><i class="fas fa-scroll"></i>历史人文</h4>
+        <p>走进蔡文姬纪念馆，了解东汉才女跌宕人生与文学成就。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-microphone"></i>小小讲解员</h4>
+        <p>学习发声技巧与站姿礼仪，亲手把历史故事讲出来。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-music"></i>音乐文学</h4>
+        <p>走近《胡笳十八拍》雕塑园，感受古代音乐与文学之美。</p>
+      </div>
+      <div class="highlight-item">
+        <h4><i class="fas fa-hands"></i>非遗手作</h4>
+        <p>亲手制作古风书签，把研学记忆带回家。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 行程安排 -->
+  <div class="content-card">
+    <h2><i class="fas fa-calendar-alt"></i>行程及活动安排</h2>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>地点</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4">第一天上午</td>
+          <td>出发</td>
+          <td>08:30-09:00</td>
+          <td>集合出发，前往蓝田县蔡文姬纪念馆</td>
+          <td>研学导师介绍蔡文姬的生平故事，激发幼儿对历史人物的兴趣</td>
+        </tr>
+        <tr>
+          <td>三里镇</td>
+          <td>09:00-09:30</td>
+          <td>抵达纪念馆，介绍活动安排和注意事项</td>
+          <td>研学导师简单介绍活动安排和注意事项</td>
+        </tr>
+        <tr>
+          <td>纪念馆</td>
+          <td>09:30-10:30</td>
+          <td>参观蔡文姬生平展</td>
+          <td>讲解员带领参观《蔡文姬生平展》，讲述蔡文姬博学多才、精通音律的故事；观看《胡笳十八拍》相关展品；互动问答，激发幼儿对历史的思考</td>
+        </tr>
+        <tr>
+          <td>纪念馆</td>
+          <td>10:30-11:00</td>
+          <td>休息与交流</td>
+          <td>幼儿在老师带领下分享参观感受，引导幼儿思考蔡文姬的坚韧精神</td>
+        </tr>
+        <tr>
+          <td>中午</td>
+          <td>餐馆</td>
+          <td>11:00-12:00</td>
+          <td>午餐时间</td>
+          <td>统一提供特色午餐，体验乡村饮食文化</td>
+        </tr>
+        <tr>
+          <td rowspan="4">下午</td>
+          <td>纪念馆</td>
+          <td>12:30-13:30</td>
+          <td>小小讲解员体验活动</td>
+          <td>在专业讲解员指导下，学习简单的讲解技巧，尝试讲述蔡文姬的小故事；体验讲解员站姿、发声等基本礼仪</td>
+        </tr>
+        <tr>
+          <td>纪念馆</td>
+          <td>13:30-14:30</td>
+          <td>非遗手工体验——古风书签制作</td>
+          <td>提供材料，让幼儿在家长协助下制作古风书签；老师讲解《胡笳十八拍》的简单意境</td>
+        </tr>
+        <tr>
+          <td>纪念馆</td>
+          <td>14:30-15:00</td>
+          <td>参观碑石展与《胡笳十八拍》雕塑园</td>
+          <td>近距离观看碑石，简单介绍碑刻文字；在雕塑园中模仿古代乐师动作，感受音乐韵律</td>
+        </tr>
+        <tr>
+          <td>蔡王村</td>
+          <td>15:00-15:30</td>
+          <td>聆听蔡王村守墓故事</td>
+          <td>邀请当地老人讲述蔡王村王氏家族为蔡文姬守墓 1800 多年的故事，幼儿提问互动，表达敬意</td>
+        </tr>
+        <tr>
+          <td>傍晚</td>
+          <td>纪念馆</td>
+          <td>15:30-16:00</td>
+          <td>活动总结与合影</td>
+          <td>全体幼儿合影留念，记录这次难忘的研学之旅</td>
+        </tr>
+        <tr>
+          <td>晚上</td>
+          <td>返回</td>
+          <td>16:00-16:30</td>
+          <td>集合返程</td>
+          <td>研学导师进行简单总结，乘车返回出发地，结束愉快的研学活动</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 报名按钮 -->
+  <div class="cta-row">
+    <button class="cta" onclick="alert('前端演示：即将进入报名流程')">
+      <i class="fas fa-calendar-check"></i> 立即报名
+    </button>
+    <a class="cta secondary" href="index.html">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </div>
+
+  <!-- 研学手册下载 -->
+  <div class="handbook-section">
+    <h3><i class="fas fa-book-open"></i> 研学手册</h3>
+    <p>下载完整研学手册（PDF），包含活动详细介绍、行程安排与安全须知。</p>
+    <a class="handbook-btn" href="files/wenji-yiyun-handbook.pdf" download>
+      <i class="fas fa-download"></i> 下载研学手册（PDF）
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
