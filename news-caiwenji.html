@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蓝田县蔡文姬纪念馆 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:820px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 文章头部 */
+.article-tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:1.9rem;color:var(--purple-deep);font-weight:700;margin-bottom:1rem;line-height:1.4}
+.article-meta{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border-light);display:flex;gap:1.5rem;flex-wrap:wrap}
+.article-meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面 */
+.cover{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-weight:600}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文 */
+.article-body{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);font-size:1rem;color:#4a4458}
+.article-body p{margin-bottom:1.2rem}
+.article-body h3{color:var(--purple-deep);font-size:1.15rem;margin:1.8rem 0 .8rem;display:flex;align-items:center;gap:.5rem}
+.article-body h3 i{color:var(--purple-primary)}
+.article-body blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+.article-body ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.article-body li{margin-bottom:.4rem}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 文章底部 */
+.article-footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.tag{background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;padding:.3rem .9rem;border-radius:20px;font-weight:500;margin-right:.4rem}
+.back-home{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem}
+.back-home:hover{color:var(--purple-deep)}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .article-body{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="童行乡野">
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="article-tag">📰 新闻动态</span>
+  <h1>蓝田县蔡文姬纪念馆</h1>
+  <div class="article-meta">
+    <span><i class="fas fa-calendar-alt"></i>2025-08-03</span>
+    <span><i class="fas fa-user-edit"></i>童行乡野编辑部</span>
+    <span><i class="fas fa-eye"></i>阅读 312</span>
+  </div>
+
+  <!-- 封面 -->
+  <div class="cover">
+    <img src="https://picsum.photos/900/500?random=43" alt="蔡文姬纪念馆">
+  </div>
+
+  <!-- 正文 -->
+  <div class="article-body">
+
+    <p>2025 年 8 月 3 日，由童行乡野组织的“探寻文姬遗韵，传承古韵新风”亲子文化一日游，在蓝田县三里镇蔡王村蔡文姬纪念馆顺利举行。15 组亲子家庭参加了本次活动，一起走进这位东汉才女的传奇人生。</p>
+
+    <h3><i class="fas fa-lightbulb"></i>活动背景</h3>
+    <p>蔡文姬纪念馆占地面积 3630 平方米，是国家 AAA 级景区，现已成为陕西省重要的历史文化教育基地和爱国主义教育基地。本产品以“探寻文姬遗韵，传承古韵新风”为主题，将 K-STAR 人文历史教育理念融入传统文化研学，让幼儿在参观、聆听、体验、创作中了解蔡文姬的历史背景和文学成就，激发文化认同感和家国情怀，培养审美能力和文化自信。</p>
+
+    <h3><i class="fas fa-star"></i>核心亮点</h3>
+    <ul>
+      <li><strong>生平展参观 · 文化溯源：</strong>讲解员带领幼儿参观《蔡文姬生平展》，讲述蔡文姬博学多才、精通音律的故事。</li>
+      <li><strong>小小讲解员体验 · 角色代入：</strong>在专业讲解员指导下，幼儿学习发声技巧、站姿礼仪与历史知识，尝试讲述蔡文姬的小故事。</li>
+      <li><strong>古风书签制作 · 动手实践：</strong>提供材料，让幼儿在家长协助下制作古风书签，绘制或粘贴蔡文姬相关图案。</li>
+      <li><strong>碑石展与雕塑园参观 · 艺术感知：</strong>参观碑石展与《胡笳十八拍》雕塑园，感受古代音乐与文学的魅力。</li>
+      <li><strong>守墓故事聆听 · 美德传承：</strong>邀请当地老人讲述蔡王村王氏家族为蔡文姬守墓 1800 多年的故事，感悟感恩与坚守的传统美德。</li>
+      <li><strong>成长档案记录：</strong>活动结束后，导师填写观察评语，家长上传作品与寄语，系统自动生成幼儿专属成长报告。</li>
+    </ul>
+
+    <h3><i class="fas fa-map-marked-alt"></i>研学地介绍</h3>
+    <p>蔡文姬纪念馆位于西安市蓝田县三里镇蔡王村，距蓝田县城约 5 千米，交通便利。蔡文姬，名琰，是东汉著名文学史家蔡邕的女儿，博学多才，精通音律，其五言体代表诗作《悲愤诗》被后人演绎为著名的古琴名曲《胡笳十八拍》。</p>
+    <p>纪念馆占地面积 3630 平方米，是国家 AAA 级景区，馆内设有《蔡文姬生平展》《蓝田文物展》《碑石展》等陈列，其中《蔡文姬生平展》以“蔡文姬和她的时代”为主题，分七个单元详细展示其生平事迹与文学成就。馆内还建有《胡笳十八拍》雕塑园，并保留有历经 1800 余年的蔡文姬墓塚，林木葱郁，庄严肃穆。</p>
+
+    <h3><i class="fas fa-calendar-alt"></i>行程回顾</h3>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3">第一天上午</td>
+          <td>08:30-09:00</td>
+          <td>集合出发，前往蓝田县蔡文姬纪念馆</td>
+          <td>研学导师介绍蔡文姬的生平故事，激发幼儿对历史人物的兴趣</td>
+        </tr>
+        <tr>
+          <td>09:00-09:30</td>
+          <td>抵达纪念馆，介绍活动安排和注意事项</td>
+          <td>研学导师简单介绍活动安排和注意事项</td>
+        </tr>
+        <tr>
+          <td>09:30-10:30</td>
+          <td>参观蔡文姬生平展</td>
+          <td>讲解员带领参观《蔡文姬生平展》；观看《胡笳十八拍》相关展品；互动问答环节</td>
+        </tr>
+        <tr>
+          <td rowspan="4">第一天上午至下午</td>
+          <td>10:30-11:00</td>
+          <td>休息与交流</td>
+          <td>分享参观感受，引导幼儿思考蔡文姬的坚韧精神</td>
+        </tr>
+        <tr>
+          <td>11:00-12:00</td>
+          <td>午餐时间</td>
+          <td>统一提供特色午餐，体验乡村饮食文化</td>
+        </tr>
+        <tr>
+          <td>12:30-13:30</td>
+          <td>小小讲解员体验活动</td>
+          <td>学习简单的讲解技巧，尝试讲述蔡文姬的小故事；体验讲解员站姿、发声等基本礼仪</td>
+        </tr>
+        <tr>
+          <td>13:30-14:30</td>
+          <td>非遗手工体验——古风书签制作</td>
+          <td>在家长协助下制作古风书签；老师讲解《胡笳十八拍》的简单意境</td>
+        </tr>
+        <tr>
+          <td rowspan="4">第一天下午</td>
+          <td>14:30-15:00</td>
+          <td>参观碑石展与《胡笳十八拍》雕塑园</td>
+          <td>近距离观看碑石，简单介绍碑刻文字；在雕塑园中模仿古代乐师动作，感受音乐韵律</td>
+        </tr>
+        <tr>
+          <td>15:00-15:30</td>
+          <td>聆听蔡王村守墓故事</td>
+          <td>邀请当地老人讲述蔡王村王氏家族为蔡文姬守墓 1800 多年的故事，幼儿提问互动，表达敬意</td>
+        </tr>
+        <tr>
+          <td>15:30-16:00</td>
+          <td>活动总结与合影</td>
+          <td>全体幼儿合影留念，记录这次难忘的研学之旅</td>
+        </tr>
+        <tr>
+          <td>16:00-16:30</td>
+          <td>集合返程</td>
+          <td>研学导师进行简单总结，乘车返回出发地，结束愉快的研学活动</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3><i class="fas fa-quote-left"></i>活动意义</h3>
+    <p>本次蔡文姬纪念馆亲子文化一日游，不仅让孩子们了解了东汉才女蔡文姬的生平与文学成就，也在“小小讲解员”体验和古风书签制作中，加深了对历史人物的理解，提升了表达能力和动手能力。</p>
+    <p>聆听蔡王村守墓故事，更让孩子们懂得了感恩与坚守的传统美德，在幼小的心灵里种下了文化尊重的种子。</p>
+
+    <blockquote>探寻文姬遗韵，传承古韵新风。</blockquote>
+
+  </div>
+
+  <!-- 文章底部 -->
+  <div class="article-footer">
+    <div>
+      <span class="tag"># 蔡文姬纪念馆</span>
+      <span class="tag"># 人文历史</span>
+      <span class="tag"># K-STAR系列</span>
+    </div>
+    <a href="index.html" class="back-home">← 返回首页</a>
+  </div>
+
+</div>
+</body>
+</html>
