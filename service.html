@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>客服 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-soft:#efe8ff;--purple-deep:#5a3d9c;--text-dark:#2e2a3a;--text-muted:#6b657a;--border-light:rgba(124,92,191,.15)}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.content-card{background:#fff;border-radius:24px;padding:2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
+.content-card h1{color:var(--purple-deep);font-size:1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.content-card h1 i{color:var(--purple-primary)}
+.chat-box{background:var(--purple-soft);border-radius:18px;padding:1.5rem;min-height:180px;display:flex;flex-direction:column;gap:1rem;margin-bottom:1rem}
+.chat-msg{display:flex;gap:.7rem;align-items:flex-start}
+.chat-msg.me{flex-direction:row-reverse}
+.chat-avatar{width:36px;height:36px;border-radius:50%;background:var(--purple-primary);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.85rem}
+.chat-msg.me .chat-avatar{background:var(--purple-deep)}
+.chat-bubble{background:#fff;padding:.7rem 1rem;border-radius:14px;font-size:.9rem;color:var(--text-dark);max-width:75%;box-shadow:0 4px 12px -6px rgba(90,61,156,.2)}
+.chat-msg.me .chat-bubble{background:var(--purple-primary);color:#fff}
+.chat-input{display:flex;gap:.6rem}
+.chat-input input{flex:1;padding:.75rem 1rem;border:1.5px solid var(--border-light);border-radius:14px;font-size:.9rem;font-family:inherit;outline:none}
+.chat-input input:focus{border-color:var(--purple-primary)}
+.chat-input button{background:var(--purple-primary);color:#fff;border:none;padding:.75rem 1.4rem;border-radius:14px;font-weight:600;cursor:pointer;font-family:inherit}
+.chat-input button:hover{background:var(--purple-deep)}
+.faq-item{background:var(--purple-soft);border-radius:14px;padding:1rem 1.2rem;margin-bottom:.8rem}
+.faq-item h4{color:var(--purple-deep);font-size:.95rem;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+.faq-item h4 i{color:var(--purple-primary)}
+.faq-item p{color:var(--text-muted);font-size:.85rem;margin:0}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="童行乡野"><span>童行乡野</span></a>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首页</a>
+  </nav>
+
+  <div class="content-card">
+    <h1><i class="fas fa-headset"></i> 在线客服</h1>
+    <div class="chat-box">
+      <div class="chat-msg">
+        <div class="chat-avatar"><i class="fas fa-headset"></i></div>
+        <div class="chat-bubble">您好！这里是童行乡野客服，有什么可以帮您？😊</div>
+      </div>
+      <div class="chat-msg me">
+        <div class="chat-avatar"><i class="fas fa-user"></i></div>
+        <div class="chat-bubble">请问研学活动的报名流程是怎样的？</div>
+      </div>
+      <div class="chat-msg">
+        <div class="chat-avatar"><i class="fas fa-headset"></i></div>
+        <div class="chat-bubble">点击首页活动卡片进入详情页，点击「立即报名」即可。如需帮助可随时联系我们。</div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="请输入您的问题..." onkeydown="if(event.key==='Enter'){sendMsg(this)}">
+      <button onclick="sendMsg(this.previousElementSibling)">发送</button>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <h1><i class="fas fa-question-circle"></i> 常见问题</h1>
+    <div class="faq-item">
+      <h4><i class="fas fa-calendar-check"></i>如何报名研学活动？</h4>
+      <p>在首页或活动列表页点击活动卡片，进入详情页后点击「立即报名」按钮即可。</p>
+    </div>
+    <div class="faq-item">
+      <h4><i class="fas fa-undo-alt"></i>可以取消订单吗？</h4>
+      <p>活动开始前 48 小时可免费取消，退款将于 3~5 个工作日原路返回。</p>
+    </div>
+    <div class="faq-item">
+      <h4><i class="fas fa-child"></i>适合多大孩子参加？</h4>
+      <p>大部分活动面向 3~6 岁幼儿及家长，具体年龄范围请见各活动详情页。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function sendMsg(input){
+  const text = input.value.trim();
+  if(!text) return;
+  const box = document.querySelector('.chat-box');
+  const msg = document.createElement('div');
+  msg.className = 'chat-msg me';
+  msg.innerHTML = `<div class="chat-avatar"><i class="fas fa-user"></i></div><div class="chat-bubble">${text}</div>`;
+  box.appendChild(msg);
+  input.value = '';
+  box.scrollTop = box.scrollHeight;
+  // 模拟客服自动回复
+  setTimeout(() => {
+    const reply = document.createElement('div');
+    reply.className = 'chat-msg';
+    reply.innerHTML = `<div class="chat-avatar"><i class="fas fa-headset"></i></div><div class="chat-bubble">已收到您的消息，客服会尽快回复您～</div>`;
+    box.appendChild(reply);
+    box.scrollTop = box.scrollHeight;
+  }, 800);
+}
+</script>
+</body>
+</html>
