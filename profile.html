@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人信息 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;--purple-soft:#efe8ff;--purple-deep:#5a3d9c;--text-dark:#2e2a3a;--text-muted:#6b657a;--border-light:rgba(124,92,191,.15)}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.content-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light)}
+.profile-top{display:flex;align-items:center;gap:1.5rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:2px solid var(--purple-soft);flex-wrap:wrap}
+.profile-avatar{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--purple-primary),var(--purple-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-size:2.2rem;flex-shrink:0;box-shadow:0 10px 25px -10px rgba(124,92,191,.6)}
+.profile-info h1{color:var(--purple-deep);font-size:1.5rem;margin-bottom:.3rem}
+.profile-info p{color:var(--text-muted);font-size:.9rem;margin:0}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-bottom:1.8rem}
+.info-item{background:var(--purple-soft);border-radius:16px;padding:1rem 1.2rem}
+.info-item label{display:block;font-size:.75rem;color:var(--purple-primary);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.3rem}
+.info-item span{color:var(--text-dark);font-weight:500}
+.pref-title{font-size:1rem;color:var(--purple-deep);font-weight:600;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+.pref-title i{color:var(--purple-primary)}
+.pref-tags{display:flex;flex-wrap:wrap;gap:.6rem}
+.pref-tag{background:var(--purple-soft);color:var(--purple-primary);padding:.4rem 1rem;border-radius:20px;font-size:.85rem;font-weight:500;border:1px solid rgba(124,92,191,.2);transition:all .2s;cursor:pointer}
+.pref-tag:hover{background:var(--purple-primary);color:#fff}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="童行乡野"><span>童行乡野</span></a>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首页</a>
+  </nav>
+  <div class="content-card">
+    <div class="profile-top">
+      <div class="profile-avatar"><i class="fas fa-user"></i></div>
+      <div class="profile-info">
+        <h1 id="userName">童行乡野用户</h1>
+        <p>已加入童行乡野 · 一起探索乡野</p>
+      </div>
+    </div>
+    <div class="info-grid">
+      <div class="info-item"><label>年龄</label><span>6 岁</span></div>
+      <div class="info-item"><label>性别</label><span>女</span></div>
+      <div class="info-item"><label>生日</label><span>2019-05-12</span></div>
+      <div class="info-item"><label>手机号</label><span>138****8888</span></div>
+    </div>
+    <div class="pref-title"><i class="fas fa-heart"></i>研学偏好</div>
+    <div class="pref-tags">
+      <span class="pref-tag">自然探索</span>
+      <span class="pref-tag">非遗体验</span>
+      <span class="pref-tag">人文历史</span>
+      <span class="pref-tag">亲子运动</span>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const name = localStorage.getItem('tx_user');
+  if(name) document.getElementById('userName').textContent = name;
+})();
+</script>
+</body>
+</html>
