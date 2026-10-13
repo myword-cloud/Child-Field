@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四皓田园，探秘小侠 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:820px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 文章头部 */
+.article-tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:1.9rem;color:var(--purple-deep);font-weight:700;margin-bottom:1rem;line-height:1.4}
+.article-meta{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border-light);display:flex;gap:1.5rem;flex-wrap:wrap}
+.article-meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面 */
+.cover{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-weight:600}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文 */
+.article-body{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);font-size:1rem;color:#4a4458}
+.article-body p{margin-bottom:1.2rem}
+.article-body h3{color:var(--purple-deep);font-size:1.15rem;margin:1.8rem 0 .8rem;display:flex;align-items:center;gap:.5rem}
+.article-body h3 i{color:var(--purple-primary)}
+.article-body blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+.article-body ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.article-body li{margin-bottom:.4rem}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 文章底部 */
+.article-footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.tag{background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;padding:.3rem .9rem;border-radius:20px;font-weight:500;margin-right:.4rem}
+.back-home{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem}
+.back-home:hover{color:var(--purple-deep)}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .article-body{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="童行乡野">
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="article-tag">📰 新闻动态</span>
+  <h1>四皓田园，探秘小侠</h1>
+  <div class="article-meta">
+    <span><i class="fas fa-calendar-alt"></i>2024-07-28</span>
+    <span><i class="fas fa-user-edit"></i>童行乡野编辑部</span>
+    <span><i class="fas fa-eye"></i>阅读 328</span>
+  </div>
+
+  <!-- 封面 -->
+  <div class="cover">
+    <img src="https://picsum.photos/900/500?random=40" alt="四皓田园，探秘小侠">
+  </div>
+
+  <!-- 正文 -->
+  <div class="article-body">
+
+    <p>2024 年 7 月 28 日，由童行乡野组织的“四皓田园，探秘小侠”亲子奇遇一日游，在西安市长安区太乙宫街道四皓村顺利举行。20 组亲子家庭参加了本次活动，在田园间度过了一段充满欢乐与成长的时光。</p>
+
+    <h3><i class="fas fa-seedling"></i>活动背景</h3>
+    <p>西安市长安区四皓村以其丰富的生态农业资源和优质的农产品而闻名。本次产品以“四皓田园，探秘小侠”为主题，将 IBT（互动—体验—思考）教育模式融入农业生态研学，让幼儿在讲座、参观、采摘、品尝中了解生态农业的概念、特点和优势，通过实地观察和体验，增强对自然和环境的认识与尊重，培养劳动意识和团队协作精神。</p>
+
+    <h3><i class="fas fa-star"></i>核心亮点</h3>
+    <ul>
+      <li><strong>生态农业讲座 · 知识导入：</strong>展示四皓村的生态农业资源和农产品，让幼儿了解其品质与口感。</li>
+      <li><strong>农田参观与体验 · 动手实践：</strong>带领幼儿参观农田，观察蔬菜、水果、花卉生长情况，亲手体验浇水、施肥等农事活动。</li>
+      <li><strong>农产品采摘 · 劳动乐趣：</strong>组织幼儿采摘蔬菜、水果，体验劳动乐趣，注意安全事项。</li>
+      <li><strong>农产品加工与品尝 · 食育体验：</strong>展示农产品加工过程，让幼儿品尝自己采摘的农产品，感受独特口感。</li>
+      <li><strong>环保与可持续发展讨论 · 价值引导：</strong>引导幼儿思考生态农业对环境保护和可持续发展的重要性。</li>
+      <li><strong>成长档案记录：</strong>活动结束后，导师填写观察评语，家长上传作品与寄语，系统自动生成幼儿专属成长报告。</li>
+    </ul>
+
+    <h3><i class="fas fa-map-marked-alt"></i>研学地介绍</h3>
+    <p>四皓村位于西安长安区太乙宫街道，是秦岭周边众多村落中的一个。相传商山四皓曾在此隐居，赋予了它深厚的历史文化底蕴。自然资源方面，它有着独特的地理位置，临近终南山和太乙峪河，展现出别具特色的自然景观。村内设有村史馆、认养田园等场所，是开展生态农业研学的理想之地。</p>
+
+    <h3><i class="fas fa-calendar-alt"></i>行程回顾</h3>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>时间</th>
+          <th>地点</th>
+          <th>活动内容</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8:30</td>
+          <td>陕西师范大学长安校区北门</td>
+          <td>集合、核对人数、致欢迎词、分发小马甲、合影留念</td>
+          <td>研学导师介绍行程安排与注意事项</td>
+        </tr>
+        <tr>
+          <td>8:30-9:00</td>
+          <td>乘车</td>
+          <td>乘大巴车前往四皓村</td>
+          <td>途中讲解景区，并引导幼儿进行四皓村知识问答小游戏</td>
+        </tr>
+        <tr>
+          <td>9:00-9:30</td>
+          <td>四皓村</td>
+          <td>抵达四皓村，介绍活动安排和注意事项</td>
+          <td>研学导师讲解村落历史，阐述当天活动安排</td>
+        </tr>
+        <tr>
+          <td>9:30-10:30</td>
+          <td>四皓村</td>
+          <td>生态农业知识讲座</td>
+          <td>展示生态农业资源和农产品，了解其品质和口感</td>
+        </tr>
+        <tr>
+          <td>10:30-11:30</td>
+          <td>四皓村</td>
+          <td>农田参观与体验</td>
+          <td>观察蔬菜、水果和花卉生长情况，亲手体验浇水、施肥等</td>
+        </tr>
+        <tr>
+          <td>11:30-12:30</td>
+          <td>农家乐</td>
+          <td>午餐</td>
+          <td>享用乡村特色午餐，体验乡村生活</td>
+        </tr>
+        <tr>
+          <td>13:00-14:00</td>
+          <td>四皓村</td>
+          <td>农产品采摘体验</td>
+          <td>采摘蔬菜、水果等，注意安全事项，体验劳动乐趣</td>
+        </tr>
+        <tr>
+          <td>14:00-15:00</td>
+          <td>四皓村</td>
+          <td>农产品加工与品尝</td>
+          <td>展示加工过程，品尝自己采摘的农产品</td>
+        </tr>
+        <tr>
+          <td>15:00-15:30</td>
+          <td>四皓村</td>
+          <td>环保与可持续发展讨论</td>
+          <td>引导幼儿思考生态农业对环境保护和可持续发展的重要性</td>
+        </tr>
+        <tr>
+          <td>15:30-16:00</td>
+          <td>四皓村</td>
+          <td>活动总结与合影</td>
+          <td>老师总结，强调生态农业的重要性和价值；全体合影留念</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3><i class="fas fa-quote-left"></i>活动意义</h3>
+    <p>本次“四皓田园，探秘小侠”亲子奇遇一日游，不仅让孩子们在田园间亲近自然、体验农耕，也让家长在陪伴中见证了孩子的成长。通过实地观察与动手实践，孩子们对生态农业有了更直观的认识，也在劳动中收获了快乐与自信。</p>
+
+    <blockquote>田园虽小，可探秘；乡野虽远，可同行。</blockquote>
+
+  </div>
+
+  <!-- 文章底部 -->
+  <div class="article-footer">
+    <div>
+      <span class="tag"># 四皓田园</span>
+      <span class="tag"># 探秘小侠</span>
+      <span class="tag"># 生态农业</span>
+    </div>
+    <a href="index.html" class="back-home">← 返回首页</a>
+  </div>
+
+</div>
+</body>
+</html>
