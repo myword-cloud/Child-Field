@@ -24,7 +24,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 .container{position:relative;z-index:5;max-width:1280px;margin:0 auto;padding:1.2rem 2rem 3rem}
 
 /* 导航 */
-.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:var(--shadow-sm);margin-bottom:2rem}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:var(--shadow-sm);margin-bottom:2rem;position:relative;z-index:1000;}
 .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.4rem;color:var(--purple-deep);text-decoration:none}
 .logo img{height:42px;width:auto;border-radius:10px;display:block}
 .nav-links{display:flex;gap:2.2rem;font-weight:500;font-size:.95rem;align-items:center}
@@ -37,7 +37,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
 /* 个人中心下拉 */
 .user-menu{position:relative}
-.user-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:190px;background:#fff;border-radius:16px;box-shadow:0 18px 40px -15px rgba(90,61,156,.4);border:1px solid var(--border-light);padding:.5rem 0;z-index:100;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .25s ease}
+.user-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:190px;background:#fff;border-radius:16px;box-shadow:0 18px 40px -15px rgba(90,61,156,.4);border:1px solid var(--border-light);padding:.5rem 0;z-index:9999;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .25s ease}
 .user-dropdown.open{opacity:1;visibility:visible;transform:translateY(0)}
 .user-dropdown a{display:flex;align-items:center;gap:.7rem;padding:.7rem 1.2rem;color:var(--text-dark);text-decoration:none;font-size:.9rem;font-weight:500;transition:background .2s;white-space:nowrap}
 .user-dropdown a:hover{background:var(--purple-soft);color:var(--purple-primary)}
