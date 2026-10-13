@@ -55,7 +55,25 @@ h1{font-size:1.9rem;color:var(--purple-deep);font-weight:700;margin-bottom:1rem;
 .tag{background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;padding:.3rem .9rem;border-radius:20px;font-weight:500;margin-right:.4rem}
 .back-home{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem}
 .back-home:hover{color:var(--purple-deep)}
-
+/* 评论区 */
+.comment-section{margin-top:2.5rem;background:#fff;border-radius:24px;padding:2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light)}
+.comment-section h3{color:var(--purple-deep);font-size:1.2rem;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+.comment-section h3 i{color:var(--purple-primary)}
+.topic{background:var(--purple-soft);color:var(--purple-deep);padding:.8rem 1rem;border-radius:14px;font-size:.9rem;margin-bottom:1.2rem}
+.comment-form textarea{width:100%;min-height:80px;padding:.9rem 1rem;border:1.5px solid var(--border-light);border-radius:14px;font-family:inherit;font-size:.95rem;resize:vertical;outline:none;transition:border .2s;color:var(--text-dark)}
+.comment-form textarea:focus{border-color:var(--purple-primary);box-shadow:0 0 0 4px rgba(124,92,191,.1)}
+.comment-form button{margin-top:.8rem;background:var(--purple-primary);color:#fff;border:none;padding:.7rem 1.6rem;border-radius:40px;font-weight:600;font-size:.9rem;cursor:pointer;font-family:inherit;transition:all .25s;display:inline-flex;align-items:center;gap:.5rem}
+.comment-form button:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.comment-list{margin-top:1.5rem}
+.comment-item{display:flex;gap:.9rem;padding:1rem 0;border-bottom:1px solid var(--border-light)}
+.comment-item:last-child{border-bottom:none}
+.comment-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--purple-primary),var(--purple-deep));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0}
+.comment-body{flex:1}
+.comment-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem;flex-wrap:wrap;gap:.4rem}
+.comment-name{font-weight:600;color:var(--purple-deep);font-size:.9rem}
+.comment-time{font-size:.75rem;color:var(--text-muted)}
+.comment-text{color:#4a4458;font-size:.9rem;line-height:1.6}
+  
 @media(max-width:600px){
   .container{padding:1rem 1rem 3rem}
   h1{font-size:1.5rem}
@@ -206,7 +224,92 @@ h1{font-size:1.9rem;color:var(--purple-deep);font-weight:700;margin-bottom:1rem;
     </div>
     <a href="index.html" class="back-home">← 返回首页</a>
   </div>
+<!-- 评论区 -->
+<div class="comment-section">
+  <h3><i class="fas fa-comments"></i> 互动话题 · 评论</h3>
+<p class="topic">本期话题：<strong>葛牌精神研学，最让你感动的是什么？</strong></p>
 
+  <div class="comment-form">
+    <textarea id="commentInput" placeholder="写下你的想法..."></textarea>
+    <button onclick="submitComment()">
+      <i class="fas fa-paper-plane"></i> 发布评论
+    </button>
+  </div>
+
+  <div class="comment-list" id="commentList"></div>
+</div>
+ <script>
+(function(){
+  const KEY = 'tx_comments_' + location.pathname.split('/').pop().replace('.html','');
+  const listBox = document.getElementById('commentList');
+  if(!listBox) return;
+
+  function getComments(){
+    try{ return JSON.parse(localStorage.getItem(KEY) || '[]'); }
+    catch(e){ return []; }
+  }
+  function saveComments(list){
+    localStorage.setItem(KEY, JSON.stringify(list));
+  }
+  function escapeHtml(str){
+    return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+  function render(){
+    const list = getComments();
+    if(list.length === 0){
+      listBox.innerHTML = '<div style="text-align:center;color:#b0a8c0;font-size:.9rem;padding:1rem 0;">还没有评论，快来抢沙发吧～</div>';
+      return;
+    }
+    listBox.innerHTML = list.map(c => `
+      <div class="comment-item">
+        <div class="comment-avatar">${c.avatar}</div>
+        <div class="comment-body">
+          <div class="comment-head">
+            <span class="comment-name">${c.name}</span>
+            <span class="comment-time">${c.time}</span>
+          </div>
+          <div class="comment-text">${escapeHtml(c.text)}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  window.submitComment = function(){
+    const input = document.getElementById('commentInput');
+    const text = input.value.trim();
+    if(!text){ alert('请输入评论内容'); return; }
+
+    const isLogged = localStorage.getItem('tx_logged_in') === '1';
+    if(!isLogged){
+      alert('请先登录后再评论');
+      location.href = 'login.html';
+      return;
+    }
+
+    const user = localStorage.getItem('tx_user') || '匿名用户';
+    const now = new Date();
+    const time = now.getFullYear() + '-' +
+                 String(now.getMonth()+1).padStart(2,'0') + '-' +
+                 String(now.getDate()).padStart(2,'0') + ' ' +
+                 String(now.getHours()).padStart(2,'0') + ':' +
+                 String(now.getMinutes()).padStart(2,'0');
+
+    const list = getComments();
+    list.unshift({
+      name: user,
+      avatar: user.charAt(0).toUpperCase(),
+      time: time,
+      text: text
+    });
+    saveComments(list);
+    input.value = '';
+    render();
+  };
+
+  render();
+})();
+</script>
+  
 </div>
 </body>
 </html>
