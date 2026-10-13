@@ -26,20 +26,29 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 /* 导航 */
 .navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:var(--shadow-sm);margin-bottom:2rem}
 .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.4rem;color:var(--purple-deep);text-decoration:none}
-.logo img{
-  height:42px;
-  width:auto;
-  display:block;
-  border-radius:10px;
-  box-shadow:0 4px 10px rgba(124,92,191,.15);
-}
+.logo img{height:42px;width:auto;border-radius:10px;display:block}
 .nav-links{display:flex;gap:2.2rem;font-weight:500;font-size:.95rem;align-items:center}
 .nav-links a{color:var(--text-muted);text-decoration:none;transition:color .2s;position:relative}
 .nav-links a:hover{color:var(--purple-primary)}
 .nav-links a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2.5px;background:var(--purple-primary);border-radius:3px;transition:width .25s}
 .nav-links a:hover::after{width:100%}
-.login-btn{background:var(--purple-primary);color:#fff;border:none;padding:.6rem 1.6rem;border-radius:40px;font-weight:600;font-size:.9rem;cursor:pointer;box-shadow:0 6px 16px -6px rgba(124,92,191,.5);transition:all .25s;display:flex;align-items:center;gap:.5rem}
+.login-btn{background:var(--purple-primary);color:#fff;border:none;padding:.6rem 1.6rem;border-radius:40px;font-weight:600;font-size:.9rem;cursor:pointer;box-shadow:0 6px 16px -6px rgba(124,92,191,.5);transition:all .25s;display:flex;align-items:center;gap:.5rem;font-family:inherit}
 .login-btn:hover{background:var(--purple-deep);transform:translateY(-2px)}
+
+/* 个人中心下拉 */
+.user-menu{position:relative}
+.user-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:190px;background:#fff;border-radius:16px;box-shadow:0 18px 40px -15px rgba(90,61,156,.4);border:1px solid var(--border-light);padding:.5rem 0;z-index:100;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .25s ease}
+.user-dropdown.open{opacity:1;visibility:visible;transform:translateY(0)}
+.user-dropdown a{display:flex;align-items:center;gap:.7rem;padding:.7rem 1.2rem;color:var(--text-dark);text-decoration:none;font-size:.9rem;font-weight:500;transition:background .2s;white-space:nowrap}
+.user-dropdown a:hover{background:var(--purple-soft);color:var(--purple-primary)}
+.user-dropdown a i{color:var(--purple-primary);width:18px;text-align:center;font-size:.9rem}
+.user-dropdown .divider{height:1px;background:var(--border-light);margin:.4rem 1rem}
+
+/* 首页大 Logo */
+.hero-logo{text-align:center;padding:1.5rem 0 1rem}
+.hero-logo img{width:140px;height:auto;border-radius:20px;box-shadow:0 12px 30px -10px rgba(124,92,191,.35)}
+.hero-slogan{text-align:center;color:var(--purple-deep);font-size:1.3rem;font-weight:700;letter-spacing:-.01em;margin-bottom:2rem}
+.hero-slogan small{display:block;font-size:.85rem;font-weight:400;color:var(--text-muted);letter-spacing:1px;margin-top:.3rem}
 
 /* 搜索 */
 .search-section{margin-bottom:2.2rem;position:relative;z-index:10}
@@ -48,9 +57,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 .search-box i.search-icon{color:var(--purple-primary);font-size:1.1rem;margin-right:.8rem}
 .search-box input{flex:1;border:none;outline:none;background:transparent;font-size:1rem;font-family:inherit;color:var(--text-dark);padding:.7rem 0}
 .search-box input::placeholder{color:#b0a8c0}
-.search-btn{background:var(--purple-primary);color:#fff;border:none;padding:.7rem 1.8rem;border-radius:50px;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:.4rem}
+.search-btn{background:var(--purple-primary);color:#fff;border:none;padding:.7rem 1.8rem;border-radius:50px;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:.4rem;font-family:inherit}
 .search-btn:hover{background:var(--purple-deep);transform:scale(1.02)}
-.search-results{position:absolute;top:calc(100% + .6rem);left:50%;transform:translateX(-50%);width:100%;max-width:680px;background:#fff;border-radius:24px;box-shadow:0 25px 50px -15px rgba(90,61,156,.35);border:1px solid var(--border-light);overflow:hidden;z-index:100;max-height:0;opacity:0;visibility:hidden;transition:all .3s}
+.search-results{position:absolute;top:calc(100% + .6rem);left:50%;transform:translateX(-50%)width:100%;max-width:680px;background:#fff;border-radius:24px;box-shadow:0 25px 50px -15px rgba(90,61,156,.35);border:1px solid var(--border-light);overflow:hidden;z-index:100;max-height:0;opacity:0;visibility:hidden;transition:all .3s}
 .search-results.active{max-height:380px;opacity:1;visibility:visible;overflow-y:auto}
 .search-result-item{display:flex;align-items:center;gap:1rem;padding:.9rem 1.5rem;cursor:pointer;transition:background .2s;border-bottom:1px solid rgba(124,92,191,.06)}
 .search-result-item:hover{background:var(--purple-soft)}
@@ -93,7 +102,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 .card-body h4{font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-bottom:.4rem;line-height:1.3}
 .card-body p{font-size:.85rem;color:var(--text-muted);display:flex;align-items:center;gap:.4rem}
 .card-body p i{color:var(--purple-primary);font-size:.75rem}
-
 /* 新闻 */
 .news-section{margin-bottom:4rem}
 .news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin-top:1.5rem}
@@ -114,6 +122,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 .social-icons i{font-size:1.2rem;margin-left:1.2rem;color:var(--text-muted);transition:color .2s;cursor:pointer}
 .social-icons i:hover{color:var(--purple-primary)}
 
+/* Toast */
+.toast-message{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--purple-deep);color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:500;font-size:.95rem;box-shadow:0 20px 35px -10px rgba(90,61,156,.5);z-index:999;transition:transform .4s cubic-bezier(.2,.9,.3,1.1);pointer-events:none;display:flex;align-items:center;gap:.7rem}
+.toast-message.show{transform:translateX(-50%) translateY(0)}
+
 /* 响应式 */
 @media (max-width:900px){
   .container{padding:1rem 1.2rem 2rem}
@@ -133,16 +145,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
   .footer{flex-direction:column;text-align:center}
   .footer-links{justify-content:center}
 }
-
 .fade-up{animation:fadeUp .7s cubic-bezier(.15,.9,.25,1) forwards;opacity:0}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 .delay-1{animation-delay:.05s}
 .delay-2{animation-delay:.15s}
 .delay-3{animation-delay:.25s}
 .delay-4{animation-delay:.35s}
-
-.toast-message{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--purple-deep);color:#fff;padding:.9rem 2rem;border-radius:50px;font-weight:500;font-size:.95rem;box-shadow:0 20px 35px -10px rgba(90,61,156,.5);z-index:999;transition:transform .4s cubic-bezier(.2,.9,.3,1.1);pointer-events:none;display:flex;align-items:center;gap:.7rem}
-.toast-message.show{transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
@@ -158,18 +166,46 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
   <!-- ===== 导航栏 ===== -->
   <nav class="navbar fade-up">
-<a href=" " class="logo">
-  <img src="logo.jpg" alt="童行乡野" style="height:42px;width:auto;border-radius:10px;">
-  <span>童行乡野</span>
-</a >
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="童行乡野">
+      <span>童行乡野</span>
+    </a>
     <div class="nav-links">
       <a href="index.html">首页</a>
       <a href="about.html">关于我们</a>
-      <button class="login-btn" onclick="location.href='login.html'">
+
+      <!-- 未登录状态 -->
+      <button class="login-btn" id="navLoginBtn" onclick="location.href='login.html'">
         <i class="fas fa-user-circle"></i> 登录
       </button>
+
+      <!-- 已登录状态：个人中心下拉 -->
+      <div class="user-menu" id="userMenu" style="display:none;">
+        <button class="login-btn" onclick="toggleUserMenu(event)">
+          <i class="fas fa-user"></i> 个人中心 <i class="fas fa-caret-down" style="font-size:.7rem;margin-left:.2rem;"></i>
+        </button>
+        <div class="user-dropdown" id="userDropdown">
+          <a href="profile.html"><i class="fas fa-id-card"></i> 个人信息</a>
+          <a href="orders.html"><i class="fas fa-receipt"></i> 个人订单</a>
+          <a href="trail.html"><i class="fas fa-map-marked-alt"></i> 我的行踪</a>
+          <a href="coupons.html"><i class="fas fa-ticket-alt"></i> 我的优惠券</a>
+          <a href="groups.html"><i class="fas fa-users"></i> 我的拼团</a>
+          <a href="service.html"><i class="fas fa-headset"></i> 客服</a>
+          <div class="divider"></div>
+          <a href="#" onclick="logout(event)"><i class="fas fa-sign-out-alt"></i> 退出登录</a>
+        </div>
+      </div>
     </div>
   </nav>
+
+  <!-- ===== 首页大 Logo ===== -->
+  <div class="hero-logo fade-up">
+    <img src="logo.jpg" alt="童行乡野">
+  </div>
+  <div class="hero-slogan fade-up">
+    童行乡野 · Child &amp; Field
+    <small>亲子乡村研学平台</small>
+  </div>
 
   <!-- ===== 搜索 ===== -->
   <section class="search-section fade-up delay-1">
@@ -188,31 +224,32 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
     <div class="slider-container">
 
       <div class="slide-item" onclick="location.href='news-sihaotianyuan.html'">
-        <img src="https://picsum.photos/400/250?random=1" alt="四皓田园，探秘小侠">
+        <img src="sihao-1.jpg" alt="四皓田园，探秘小侠">
         <div class="slide-overlay">四皓田园，探秘小侠</div>
       </div>
 
       <div class="slide-item" onclick="location.href='news-jijiu.html'">
-        <img src="https://picsum.photos/400/250?random=2" alt="幼儿急救培训课程">
+        <img src="jijiu-1.jpg" alt="幼儿急救培训课程">
         <div class="slide-overlay">幼儿急救培训课程</div>
       </div>
+
       <div class="slide-item" onclick="location.href='news-huxian.html'">
-        <img src="https://picsum.photos/400/250?random=3" alt="探寻非遗魅力·户县农民画">
+        <img src="huxian-1.jpg" alt="探寻非遗魅力·户县农民画">
         <div class="slide-overlay">探寻非遗魅力·户县农民画</div>
       </div>
 
       <div class="slide-item" onclick="location.href='news-caiwenji.html'">
-        <img src="https://picsum.photos/400/250?random=4" alt="蓝田县蔡文姬纪念馆">
+        <img src="caiwenji-1.jpg" alt="蓝田县蔡文姬纪念馆">
         <div class="slide-overlay">蓝田县蔡文姬纪念馆</div>
       </div>
 
       <div class="slide-item" onclick="location.href='news-xisi.html'">
-        <img src="https://picsum.photos/400/250?random=5" alt="西寺沟“绿野寻踪”">
+        <img src="xisi-1.jpg" alt="西寺沟“绿野寻踪”">
         <div class="slide-overlay">西寺沟“绿野寻踪”</div>
       </div>
 
       <div class="slide-item" onclick="location.href='news-gepai.html'">
-        <img src="https://picsum.photos/400/250?random=6" alt="追寻红色足迹·传承葛牌精神">
+        <img src="gepai-1.jpg" alt="追寻红色足迹·传承葛牌精神">
         <div class="slide-overlay">追寻红色足迹·传承葛牌精神</div>
       </div>
 
@@ -237,7 +274,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
         <div class="card" onclick="location.href='xiangye-tongxing.html'">
           <div class="card-img">
-            <img src="https://picsum.photos/300/190?random=7" alt="乡野同行·撕纸传情">
+            <img src="xiangyetongxing-1.jpg" alt="乡野同行·撕纸传情">
             <span class="card-tag">公益</span>
           </div>
           <div class="card-body">
@@ -248,7 +285,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
         <div class="card" onclick="location.href='guangying-zhumeng.html'">
           <div class="card-img">
-            <img src="https://picsum.photos/300/190?random=8" alt="光影筑梦，亲子同行">
+            <img src="guangying-1.jpg" alt="光影筑梦，亲子同行">
             <span class="card-tag">公益</span>
           </div>
           <div class="card-body">
@@ -270,7 +307,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
         <div class="card" onclick="location.href='huxian-nongminhua.html'">
           <div class="card-img">
-            <img src="https://picsum.photos/300/190?random=9" alt="户县农民画">
+            <img src="huxian-1.jpg" alt="户县农民画">
           </div>
           <div class="card-body">
             <h4>K-STAR系列 · 探寻非遗魅力·传承户县农民画</h4>
@@ -280,7 +317,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
         <div class="card" onclick="location.href='wenji-yiyun.html'">
           <div class="card-img">
-            <img src="https://picsum.photos/300/190?random=10" alt="文姬遗韵">
+            <img src="wenji-1.jpg" alt="文姬遗韵">
           </div>
           <div class="card-body">
             <h4>K-STAR系列 · 探寻文姬遗韵·传承古韵新风</h4>
@@ -290,7 +327,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
         <div class="card" onclick="location.href='sihao-tianyuan.html'">
           <div class="card-img">
-            <img src="https://picsum.photos/300/190?random=11" alt="四皓田园">
+            <img src="sihao-1.jpg" alt="四皓田园">
           </div>
           <div class="card-body">
             <h4>“童行乡野”亲子奇遇 · 四皓田园·探秘小侠</h4>
@@ -300,7 +337,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
         <div class="card" onclick="location.href='gepai-jingshen.html'">
           <div class="card-img">
-            <img src="https://picsum.photos/300/190?random=12" alt="葛牌精神">
+            <img src="gepai-1.jpg" alt="葛牌精神">
           </div>
           <div class="card-body">
             <h4>“童行乡野”亲子寻迹 · 追寻红色足迹·传承葛牌精神</h4>
@@ -310,7 +347,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
         <div class="card" onclick="location.href='huxian-sizhi.html'">
           <div class="card-img">
-            <img src="https://picsum.photos/300/190?random=13" alt="户县撕纸画">
+            <img src="huxian-2.jpg" alt="户县撕纸画">
           </div>
           <div class="card-body">
             <h4>户县特色撕纸画研学</h4>
@@ -320,7 +357,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
         <div class="card" onclick="location.href='xisi-lvye.html'">
           <div class="card-img">
-            <img src="https://picsum.photos/300/190?random=14" alt="西寺沟绿野寻踪">
+            <img src="xisi-1.jpg" alt="西寺沟绿野寻踪">
           </div>
           <div class="card-body">
             <h4>西寺沟“绿野寻踪”</h4>
@@ -343,9 +380,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
     <div class="news-grid">
 
       <div class="news-card" onclick="location.href='news-sihaotianyuan.html'">
-        <div class="news-img">
-          <img src="https://picsum.photos/300/170?random=15" alt="四皓田园">
-        </div>
+        <div class="news-img"><img src="sihao-2.jpg" alt="四皓田园"></div>
         <div class="news-content">
           <h4>四皓田园，探秘小侠</h4>
           <span>阅读更多 <i class="fas fa-arrow-right"></i></span>
@@ -353,9 +388,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
       </div>
 
       <div class="news-card" onclick="location.href='news-jijiu.html'">
-        <div class="news-img">
-          <img src="https://picsum.photos/300/170?random=16" alt="幼儿急救">
-        </div>
+        <div class="news-img"><img src="jijiu-2.jpg" alt="幼儿急救"></div>
         <div class="news-content">
           <h4>幼儿急救培训课程</h4>
           <span>阅读更多 <i class="fas fa-arrow-right"></i></span>
@@ -363,9 +396,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
       </div>
 
       <div class="news-card" onclick="location.href='news-huxian.html'">
-        <div class="news-img">
-          <img src="https://picsum.photos/300/170?random=17" alt="户县农民画">
-        </div>
+        <div class="news-img"><img src="huxian-3.jpg" alt="户县农民画"></div>
         <div class="news-content">
           <h4>探寻非遗魅力，传承户县农民画</h4>
           <span>阅读更多 <i class="fas fa-arrow-right"></i></span>
@@ -373,9 +404,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
       </div>
 
       <div class="news-card" onclick="location.href='news-caiwenji.html'">
-        <div class="news-img">
-          <img src="https://picsum.photos/300/170?random=18" alt="蔡文姬纪念馆">
-        </div>
+        <div class="news-img"><img src="caiwenji-2.jpg" alt="蔡文姬纪念馆"></div>
         <div class="news-content">
           <h4>蓝田县蔡文姬纪念馆</h4>
           <span>阅读更多 <i class="fas fa-arrow-right"></i></span>
@@ -383,9 +412,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
       </div>
 
       <div class="news-card" onclick="location.href='news-xisi.html'">
-        <div class="news-img">
-          <img src="https://picsum.photos/300/170?random=19" alt="西寺沟">
-        </div>
+        <div class="news-img"><img src="xisi-2.jpg" alt="西寺沟"></div>
         <div class="news-content">
           <h4>西寺沟“绿野寻踪”</h4>
           <span>阅读更多 <i class="fas fa-arrow-right"></i></span>
@@ -393,9 +420,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
       </div>
 
       <div class="news-card" onclick="location.href='news-gepai.html'">
-        <div class="news-img">
-          <img src="https://picsum.photos/300/170?random=20" alt="葛牌精神">
-        </div>
+        <div class="news-img"><img src="gepai-2.jpg" alt="葛牌精神"></div>
         <div class="news-content">
           <h4>追寻红色足迹，传承葛牌精神</h4>
           <span>阅读更多 <i class="fas fa-arrow-right"></i></span>
@@ -407,7 +432,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 
   <!-- ===== 页脚 ===== -->
   <footer class="footer fade-up delay-4">
-    <div>© 2025 童行乡野 · Child & Field · 亲子乡村研学平台</div>
+    <div>© 2025 童行乡野 · Child &amp; Field · 亲子乡村研学平台</div>
     <div class="footer-links">
       <a href="#">隐私政策</a>
       <a href="#">用户协议</a>
@@ -434,11 +459,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
     canvas.width=width;canvas.height=height;
     particles=[];
     for(let i=0;i<COUNT;i++){
-      particles.push({
-        x:Math.random()*width,y:Math.random()*height,
-        vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,
-        r:Math.random()*2.5+1.2,alpha:Math.random()*.4+.15
-      });
+      particles.push({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,r:Math.random()*2.5+1.2,alpha:Math.random()*.4+.15});
     }
   }
   function draw(){
@@ -451,8 +472,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
         const dist=Math.sqrt(dx*dx+dy*dy);
         if(dist<130){
           ctx.beginPath();
-         
-ctx.moveTo(particles[i].x,particles[i].y);
+          ctx.moveTo(particles[i].x,particles[i].y);
           ctx.lineTo(particles[j].x,particles[j].y);
           ctx.stroke();
         }
@@ -487,7 +507,37 @@ function showToast(msg){
   window.toastTimer=setTimeout(()=>t.classList.remove('show'),2200);
 }
 
-// ===== 搜索数据（活动名 → 活动详情页） =====
+// ===== 登录状态判断 =====
+(function(){
+  const isLogged = localStorage.getItem('tx_logged_in') === '1';
+  const loginBtn = document.getElementById('navLoginBtn');
+  const userMenu = document.getElementById('userMenu');
+  if(isLogged){
+    if(loginBtn) loginBtn.style.display = 'none';
+    if(userMenu) userMenu.style.display = 'block';
+  }
+})();
+
+// 切换下拉菜单
+function toggleUserMenu(e){
+  e.stopPropagation();
+  document.getElementById('userDropdown').classList.toggle('open');
+}
+// 点击空白关闭
+document.addEventListener('click', function(){
+  const dd = document.getElementById('userDropdown');
+  if(dd) dd.classList.remove('open');
+});
+// 退出登录
+function logout(e){
+  if(e) e.preventDefault();
+  localStorage.removeItem('tx_logged_in');
+  localStorage.removeItem('tx_user');
+  alert('已退出登录');
+  location.reload();
+}
+
+// ===== 搜索数据 =====
 const activities=[
   {id:'xiangye-tongxing',  name:'乡野同行·撕纸传情',         desc:'公益 · 陕师大非遗撕纸', icon:'fa-hand-holding-heart'},
   {id:'guangying-zhumeng', name:'光影筑梦，亲子同行',         desc:'公益 · 西安电影制片厂', icon:'fa-film'},
@@ -497,7 +547,6 @@ const activities=[
   {id:'gepai-jingshen',    name:'追寻红色足迹·传承葛牌精神',   desc:'自营 · 亲子寻迹',       icon:'fa-flag'},
   {id:'huxian-sizhi',      name:'户县特色撕纸画研学',          desc:'自营 · 非遗手作',       icon:'fa-cut'},
   {id:'xisi-lvye',         name:'西寺沟“绿野寻踪”',           desc:'自营 · 森林徒步',       icon:'fa-leaf'},
-  // 新闻也纳入搜索，方便找
   {id:'news-sihaotianyuan', name:'新闻：四皓田园，探秘小侠',       desc:'新闻动态', icon:'fa-newspaper'},
   {id:'news-jijiu',         name:'新闻：幼儿急救培训课程',         desc:'新闻动态', icon:'fa-newspaper'},
   {id:'news-huxian',        name:'新闻：探寻非遗魅力·户县农民画',  desc:'新闻动态', icon:'fa-newspaper'},
@@ -505,6 +554,7 @@ const activities=[
   {id:'news-xisi',          name:'新闻：西寺沟“绿野寻踪”',         desc:'新闻动态', icon:'fa-newspaper'},
   {id:'news-gepai',         name:'新闻：追寻红色足迹·传承葛牌精神', desc:'新闻动态', icon:'fa-newspaper'}
 ];
+
 const searchInput=document.getElementById('searchInput');
 const searchResults=document.getElementById('searchResults');
 const searchBtn=document.getElementById('searchBtn');
@@ -519,9 +569,7 @@ function highlight(text,kw){
 function renderResults(kw){
   const k=kw.trim().toLowerCase();
   if(!k){searchResults.classList.remove('active');return}
-  const filtered=activities.filter(a=>
-    a.name.toLowerCase().includes(k)||a.desc.toLowerCase().includes(k)
-  );
+  const filtered=activities.filter(a=>a.name.toLowerCase().includes(k)||a.desc.toLowerCase().includes(k));
   if(filtered.length===0){
     searchResults.innerHTML=`<div class="search-empty"><i class="fas fa-search-minus"></i>没有找到与“${kw}”相关的活动</div>`;
     searchResults.classList.add('active');
@@ -529,14 +577,10 @@ function renderResults(kw){
   }
   let html='';
   filtered.forEach(a=>{
-    html+=`
-      <div class="search-result-item" onclick="location.href='${a.id}.html'">
-        <div class="result-icon"><i class="fas ${a.icon}"></i></div>
-        <div class="result-info">
-          <h5>${highlight(a.name,kw)}</h5>
-          <span><i class="fas fa-tag"></i>${a.desc}</span>
-        </div>
-      </div>`;
+    html+=`<div class="search-result-item" onclick="location.href='${a.id}.html'">
+      <div class="result-icon"><i class="fas ${a.icon}"></i></div>
+      <div class="result-info"><h5>${highlight(a.name,kw)}</h5><span><i class="fas fa-tag"></i>${a.desc}</span></div>
+    </div>`;
   });
   searchResults.innerHTML=html;
   searchResults.classList.add('active');
@@ -548,9 +592,7 @@ searchBtn.addEventListener('click',function(){
   const kw=searchInput.value.trim();
   if(!kw){showToast('请输入搜索关键词');return}
   const k=kw.toLowerCase();
-  const filtered=activities.filter(a=>
-    a.name.toLowerCase().includes(k)||a.desc.toLowerCase().includes(k)
-  );
+  const filtered=activities.filter(a=>a.name.toLowerCase().includes(k)||a.desc.toLowerCase().includes(k));
   if(filtered.length===1){
     location.href=filtered[0].id+'.html';
   }else if(filtered.length>1){
@@ -568,7 +610,7 @@ document.addEventListener('click',function(e){
   if(!e.target.closest('.search-section'))searchResults.classList.remove('active');
 });
 
-// 页脚链接提示
+// 页脚链接
 document.querySelectorAll('.footer-links a').forEach(a=>{
   a.addEventListener('click',function(e){
     e.preventDefault();
