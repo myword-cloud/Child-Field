@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的拼团 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-soft:#efe8ff;--purple-deep:#5a3d9c;--text-dark:#2e2a3a;--text-muted:#6b657a;--border-light:rgba(124,92,191,.15)}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.content-card{background:#fff;border-radius:24px;padding:2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light)}
+.content-card h1{color:var(--purple-deep);font-size:1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.content-card h1 i{color:var(--purple-primary)}
+.group-card{border:1px solid var(--border-light);border-radius:18px;padding:1.5rem;margin-bottom:1.2rem}
+.group-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem}
+.group-head h3{font-size:1rem;color:var(--purple-deep);font-weight:600;margin:0}
+.group-status{font-size:.75rem;padding:.25rem .8rem;border-radius:20px;font-weight:600}
+.status-success{background:#e8f5e9;color:#2e7d32}
+.status-ing{background:#fff3e0;color:#e65100}
+.progress-bar{height:10px;background:var(--purple-soft);border-radius:10px;overflow:hidden;margin-bottom:.6rem}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--purple-primary),var(--purple-deep));border-radius:10px;transition:width .4s}
+.group-meta{display:flex;justify-content:space-between;font-size:.82rem;color:var(--text-muted);margin-bottom:1rem;flex-wrap:wrap;gap:.5rem}
+.group-meta span i{color:var(--purple-primary);margin-right:.3rem}
+.avatars{display:flex;align-items:center;gap:.5rem}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--purple-primary),var(--purple-deep));color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:600;border:2px solid #fff;margin-left:-8px}
+.avatar:first-child{margin-left:0}
+.avatar.empty{background:var(--purple-soft);color:var(--purple-primary);border:2px dashed var(--purple-light)}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="童行乡野"><span>童行乡野</span></a>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首页</a>
+  </nav>
+  <div class="content-card">
+    <h1><i class="fas fa-users"></i> 我的拼团</h1>
+
+    <div class="group-card">
+      <div class="group-head">
+        <h3>四皓田园，探秘小侠</h3>
+        <span class="group-status status-ing">拼团中</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+      <div class="group-meta">
+        <span><i class="fas fa-user-friends"></i>3 / 5 人</span>
+        <span><i class="fas fa-clock"></i>剩余 12:30:45</span>
+      </div>
+      <div class="avatars">
+        <div class="avatar">我</div>
+        <div class="avatar">A</div>
+        <div class="avatar">B</div>
+        <div class="avatar empty">+2</div>
+      </div>
+    </div>
+
+    <div class="group-card">
+      <div class="group-head">
+        <h3>探寻非遗魅力·户县农民画</h3>
+        <span class="group-status status-success">已成团</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+      <div class="group-meta">
+        <span><i class="fas fa-user-friends"></i>5 / 5 人</span>
+        <span><i class="fas fa-check-circle"></i>拼团完成</span>
+      </div>
+      <div class="avatars">
+        <div class="avatar">我</div>
+        <div class="avatar">C</div>
+        <div class="avatar">D</div>
+        <div class="avatar">E</div>
+        <div class="avatar">F</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
