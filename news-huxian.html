@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>探寻非遗魅力·传承户县农民画 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:820px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 文章头部 */
+.article-tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:1.9rem;color:var(--purple-deep);font-weight:700;margin-bottom:1rem;line-height:1.4}
+.article-meta{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border-light);display:flex;gap:1.5rem;flex-wrap:wrap}
+.article-meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面 */
+.cover{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-weight:600}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文 */
+.article-body{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);font-size:1rem;color:#4a4458}
+.article-body p{margin-bottom:1.2rem}
+.article-body h3{color:var(--purple-deep);font-size:1.15rem;margin:1.8rem 0 .8rem;display:flex;align-items:center;gap:.5rem}
+.article-body h3 i{color:var(--purple-primary)}
+.article-body blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+.article-body ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.article-body li{margin-bottom:.4rem}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 文章底部 */
+.article-footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.tag{background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;padding:.3rem .9rem;border-radius:20px;font-weight:500;margin-right:.4rem}
+.back-home{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem}
+.back-home:hover{color:var(--purple-deep)}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .article-body{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="童行乡野">
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="article-tag">📰 新闻动态</span>
+  <h1>探寻非遗魅力，传承户县农民画</h1>
+  <div class="article-meta">
+    <span><i class="fas fa-calendar-alt"></i>2025-07-20</span>
+    <span><i class="fas fa-user-edit"></i>童行乡野编辑部</span>
+    <span><i class="fas fa-eye"></i>阅读 286</span>
+  </div>
+
+  <!-- 封面 -->
+  <div class="cover">
+    <img src="https://picsum.photos/900/500?random=42" alt="户县农民画">
+  </div>
+
+  <!-- 正文 -->
+  <div class="article-body">
+
+    <p>2025 年 7 月 20 日，由童行乡野组织的“探寻非遗魅力，传承户县农民画”亲子研学活动，在西安市鄠邑区农民画展览馆顺利举行。15 组亲子家庭参加了本次活动，一起走进非遗艺术的世界。</p>
+
+    <h3><i class="fas fa-lightbulb"></i>活动背景</h3>
+    <p>陕西户县的农民画以其独特的艺术风格和丰富的文化内涵，成为乡村非遗文化的重要代表。本产品以“探寻非遗魅力，传承户县农民画”为主题，将 K-STAR 跨学科教育理念融入非遗文化研学，让幼儿在参观、聆听、创作、写生中了解农民画的历史、特点及其文化内涵，通过亲身体验农民画的创作过程，激发艺术兴趣和创造力，培养对乡村非遗文化的认识与尊重，增强文化自信，提升历史文化素养与审美情趣。</p>
+
+    <h3><i class="fas fa-star"></i>核心亮点</h3>
+    <ul>
+      <li><strong>农民画讲座 · 文化溯源：</strong>邀请专业讲解员介绍户县农民画的历史背景、艺术特点及文化意义。</li>
+      <li><strong>创作体验 · 动手实践：</strong>在画家指导下学习基本绘画技巧，亲手创作属于自己的乡村画卷。</li>
+      <li><strong>田间写生 · 生活溯源：</strong>走进户县田间地头，感受农民劳作生活，理解农民画的创作背景。</li>
+      <li><strong>非遗传承人面对面：</strong>与农民画家交流，了解他们的创作故事与艺术追求。</li>
+      <li><strong>成长档案记录：</strong>活动结束后，导师填写观察评语，家长上传作品与寄语，系统自动生成幼儿专属成长报告。</li>
+    </ul>
+
+    <h3><i class="fas fa-map-marked-alt"></i>研学地介绍</h3>
+    <p>户县（今鄠邑区）位于西安市西南部，是著名的“中国现代民间绘画之乡”。户县农民画诞生于 1950 年代，以色彩鲜艳、构图饱满、乡土气息浓厚著称，被列入国家级非物质文化遗产名录。</p>
+    <p>画作内容多取材于农村生活、农事劳作、节庆民俗，充满了农民对生活的热爱和对艺术的追求。户县设有农民画展览馆、画家工作室等研学场所，游客可近距离欣赏画作、参与创作体验，感受这一民间艺术的独特魅力。</p>
+
+    <h3><i class="fas fa-calendar-alt"></i>行程回顾</h3>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">第一天上午</td>
+          <td>08:30-09:00</td>
+          <td>集合出发，前往户县农民画艺术馆</td>
+          <td>指导师简要介绍户县文化，增强幼儿兴趣</td>
+        </tr>
+        <tr>
+          <td>09:00-09:30</td>
+          <td>抵达艺术馆，介绍活动安排和注意事项</td>
+          <td>提高幼儿对陕西户县文化的认识和理解</td>
+        </tr>
+        <tr>
+          <td rowspan="5">第一天上午至下午</td>
+          <td>09:30-10:30</td>
+          <td>农民画艺术讲座</td>
+          <td>专业讲解员介绍户县农民画的历史背景、艺术特点及文化意义</td>
+        </tr>
+        <tr>
+          <td>10:30-11:00</td>
+          <td>互动问答环节</td>
+          <td>讲解员提问，引导幼儿思考回答；展示经典农民画作品</td>
+        </tr>
+        <tr>
+          <td>11:00-12:00</td>
+          <td>午餐时间</td>
+          <td>享用乡村特色午餐，体验乡村生活</td>
+        </tr>
+        <tr>
+          <td>12:30-13:30</td>
+          <td>农民画创作体验</td>
+          <td>提供绘画材料和工具，幼儿亲手尝试农民画创作</td>
+        </tr>
+        <tr>
+          <td>13:30-14:30</td>
+          <td>作品展示与交流</td>
+          <td>幼儿展示作品并分享感受；老师或专业画家现场指导与评价</td>
+        </tr>
+        <tr>
+          <td rowspan="3">第一天下午</td>
+          <td>14:30-15:00</td>
+          <td>乡村非遗文化体验</td>
+          <td>邀请当地非遗传承人展示剪纸、刺绣等项目，幼儿参与体验</td>
+        </tr>
+        <tr>
+          <td>15:00-15:30</td>
+          <td>活动总结与合影</td>
+          <td>老师总结，强调乡村非遗文化的重要性和价值；全体合影留念</td>
+        </tr>
+        <tr>
+          <td>15:30-16:00</td>
+          <td>集合返程</td>
+          <td>乘车返回出发地，结束愉快的研学活动，巩固研学成果</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3><i class="fas fa-quote-left"></i>活动意义</h3>
+    <p>本次户县农民画非遗研学活动，不仅让孩子们近距离感受了民间艺术的独特魅力，也在亲手创作中激发了他们的艺术兴趣与创造力。通过与非遗传承人面对面交流，孩子们对乡村非遗文化有了更深入的认识与尊重。</p>
+
+    <blockquote>非遗为魂，童心为笔，让传统文化在孩子手中焕发新的光彩。</blockquote>
+
+  </div>
+
+  <!-- 文章底部 -->
+  <div class="article-footer">
+    <div>
+      <span class="tag"># 户县农民画</span>
+      <span class="tag"># 非遗传承</span>
+      <span class="tag"># K-STAR系列</span>
+    </div>
+    <a href="index.html" class="back-home">← 返回首页</a>
+  </div>
+
+</div>
+</body>
+</html>
