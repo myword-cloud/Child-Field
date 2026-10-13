@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于我们 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 页面标题 */
+.page-header{text-align:center;margin-bottom:3rem}
+.page-header .tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+.page-header h1{font-size:2.2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem}
+.page-header p{color:var(--text-muted);font-size:1.05rem;max-width:600px;margin:0 auto}
+
+/* 内容卡片 */
+.about-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
+.about-card h2{color:var(--purple-deep);font-size:1.35rem;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple-soft)}
+.about-card h2 i{color:var(--purple-primary);font-size:1.2rem}
+.about-card p{color:#4a4458;margin-bottom:1rem}
+.about-card ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.about-card li{margin-bottom:.5rem}
+.about-card blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+
+/* 团队网格 */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-top:1rem}
+.team-member{background:var(--purple-soft);border-radius:18px;padding:1.5rem 1.2rem;text-align:center;border:1px solid rgba(124,92,191,.12);transition:transform .25s}
+.team-member:hover{transform:translateY(-4px)}
+.team-member .avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--purple-primary),var(--purple-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:700;margin:0 auto .8rem}
+.team-member h4{color:var(--purple-deep);font-size:1rem;margin-bottom:.25rem}
+.team-member p{color:var(--text-muted);font-size:.85rem;margin:0}
+
+/* 联系方式 */
+.contact-list{list-style:none;margin:0;padding:0}
+.contact-list li{display:flex;align-items:center;gap:.8rem;padding:.6rem 0;color:#4a4458}
+.contact-list li i{color:var(--purple-primary);width:20px;text-align:center}
+
+/* 底部按钮 */
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:2rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--purple-primary);color:#fff;padding:.9rem 2rem;border-radius:40px;font-weight:600;text-decoration:none;box-shadow:0 10px 25px -8px rgba(124,92,191,.5);transition:all .25s;border:none;cursor:pointer;font-size:1rem;font-family:inherit}
+.cta:hover{background:var(--purple-deep);transform:translateY(-2px)}
+.cta.secondary{background:#fff;color:var(--purple-primary);border:1.5px solid var(--purple-primary);box-shadow:none}
+.cta.secondary:hover{background:var(--purple-soft);color:var(--purple-deep)}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  .page-header h1{font-size:1.6rem}
+  .about-card{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="童行乡野">
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 页面标题 -->
+  <div class="page-header">
+    <span class="tag">🌸 关于我们</span>
+    <h1>童行乡野</h1>
+    <p>Child &amp; Field · 亲子乡村研学平台</p>
+  </div>
+
+  <!-- 项目介绍 -->
+  <div class="about-card">
+    <h2><i class="fas fa-lightbulb"></i>项目理念</h2>
+    <ul>
+      <li><strong>亲子共学：</strong>家长不是旁观者，而是共同参与者，陪伴是最好的教育。</li>
+      <li><strong>寓教于乐：</strong>低龄友好、体验导向，让孩子在玩中学、学中玩。</li>
+      <li><strong>乡村赋能：</strong>让乡村资源被看见，让非遗与红色文化在下一代心中扎根。</li>
+      <li><strong>安全第一：</strong>专业导师全程带队，急救培训保障，让孩子安心、家长放心。</li>
+    </ul>
+    <blockquote>纸片虽小，可传情；乡野虽远，可同行。</blockquote>
+  </div>
+
+  <!-- 团队介绍 -->
+  <div class="about-card">
+    <h2><i class="fas fa-users"></i>团队介绍</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="avatar">A</div>
+        <h4>成员 A</h4>
+        <p>项目负责人</p>
+      </div>
+      <div class="team-member">
+        <div class="avatar">B</div>
+        <h4>成员 B</h4>
+        <p>课程设计</p>
+      </div>
+      <div class="team-member">
+        <div class="avatar">C</div>
+        <h4>成员 C</h4>
+        <p>活动执行</p>
+      </div>
+      <div class="team-member">
+        <div class="avatar">D</div>
+        <h4>成员 D</h4>
+        <p>视觉与技术</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 项目成果 -->
+  <div class="about-card">
+    <h2><i class="fas fa-award"></i>项目成果</h2>
+    <p>目前已开发多个亲子研学产品，涵盖非遗、人文、生态、红色等多个主题，并建立了专业导师培训与安全保障体系。</p>
+    <ul>
+      <li>非遗撕纸画亲子研学 · 陕西师范大学</li>
+      <li>户县农民画非遗研学 · 鄠邑区</li>
+      <li>蔡文姬纪念馆人文研学 · 蓝田县</li>
+      <li>四皓田园生态研学 · 长安区</li>
+      <li>葛牌镇红色研学 · 蓝田县</li>
+      <li>西寺沟自然探索 · 长安区</li>
+    </ul>
+  </div>
+
+  <!-- 联系我们 -->
+  <div class="about-card">
+    <h2><i class="fas fa-envelope"></i>联系我们</h2>
+    <ul class="contact-list">
+      <li><i class="fas fa-globe"></i> 官网：myword-cloud.github.io/Child-Field</li>
+      <li><i class="fas fa-weixin"></i> 微信公众号：童行乡野</li>
+      <li><i class="fas fa-envelope"></i> 邮箱：hello@tongxingxiangye.com</li>
+      <li><i class="fas fa-phone"></i> 客服电话：400-XXX-XXXX</li>
+    </ul>
+  </div>
+
+  <!-- 底部按钮 -->
+  <div class="cta-row">
+    <a class="cta" href="index.html">
+      <i class="fas fa-home"></i> 返回首页
+    </a>
+    <a class="cta secondary" href="login.html">
+      <i class="fas fa-user-circle"></i> 登录 / 注册
+    </a>
+  </div>
+
+</div>
+</body>
+</html>
