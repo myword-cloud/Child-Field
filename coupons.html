@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的优惠券 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-soft:#efe8ff;--purple-deep:#5a3d9c;--text-dark:#2e2a3a;--text-muted:#6b657a;--border-light:rgba(124,92,191,.15)}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.content-card{background:#fff;border-radius:24px;padding:2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light)}
+.content-card h1{color:var(--purple-deep);font-size:1.5rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.content-card h1 i{color:var(--purple-primary)}
+.coupon{position:relative;display:flex;background:linear-gradient(135deg,#fff,var(--purple-soft));border-radius:18px;overflow:hidden;margin-bottom:1.2rem;box-shadow:0 8px 20px -12px rgba(90,61,156,.3);border:1px solid var(--border-light)}
+.coupon::before,.coupon::after{content:'';position:absolute;width:20px;height:20px;background:var(--bg-cream);border-radius:50%;left:calc(70% - 10px)}
+.coupon::before{top:-10px}
+.coupon::after{bottom:-10px}
+.coupon-left{padding:1.4rem 1.5rem;flex:0 0 70%;display:flex;flex-direction:column;justify-content:center}
+.coupon-right{padding:1.4rem 1rem;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-left:2px dashed var(--purple-light)}
+.coupon-amount{font-size:2rem;font-weight:700;color:var(--purple-deep);line-height:1}
+.coupon-amount small{font-size:.9rem;font-weight:500}
+.coupon-name{font-size:.95rem;color:var(--purple-deep);font-weight:600;margin-bottom:.3rem}
+.coupon-desc{font-size:.78rem;color:var(--text-muted)}
+.coupon-btn{background:var(--purple-primary);color:#fff;border:none;padding:.5rem 1rem;border-radius:20px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
+.coupon-btn:hover{background:var(--purple-deep)}
+.coupon-btn.used{background:#ddd;color:#888;cursor:not-allowed}
+.coupon-expire{font-size:.7rem;color:var(--text-muted);margin-top:.4rem}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="童行乡野"><span>童行乡野</span></a>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首页</a>
+  </nav>
+  <div class="content-card">
+    <h1><i class="fas fa-ticket-alt"></i> 我的优惠券</h1>
+
+    <div class="coupon">
+      <div class="coupon-left">
+        <div class="coupon-name">新用户注册礼</div>
+        <div class="coupon-desc">满 100 元可用 · 全场通用</div>
+      </div>
+      <div class="coupon-right">
+        <div class="coupon-amount"><small>￥</small>30</div>
+        <button class="coupon-btn">立即使用</button>
+        <div class="coupon-expire">2025-12-31 到期</div>
+      </div>
+    </div>
+
+    <div class="coupon">
+      <div class="coupon-left">
+        <div class="coupon-name">暑期特惠</div>
+        <div class="coupon-desc">满 200 元可用 · 限亲子研学</div>
+      </div>
+      <div class="coupon-right">
+        <div class="coupon-amount"><small>￥</small>50</div>
+        <button class="coupon-btn">立即使用</button>
+        <div class="coupon-expire">2025-08-31 到期</div>
+      </div>
+    </div>
+
+    <div class="coupon">
+      <div class="coupon-left">
+        <div class="coupon-name">老用户回馈</div>
+        <div class="coupon-desc">满 150 元可用 · 全场通用</div>
+      </div>
+      <div class="coupon-right">
+        <div class="coupon-amount"><small>￥</small>20</div>
+        <button class="coupon-btn used">已使用</button>
+        <div class="coupon-expire">2025-06-30 到期</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
