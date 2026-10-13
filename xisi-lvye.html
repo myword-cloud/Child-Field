@@ -20,7 +20,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-
 /* 导航 */
 .navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
 .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
-.logo i{color:var(--purple-primary);font-size:1.6rem}
+.logo img{
+  height:38px;
+  width:auto;
+  border-radius:8px;
+  display:block;
+}
 .back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
 .back-link:hover{color:var(--purple-deep)}
 
@@ -128,10 +133,10 @@ h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;l
 
   <!-- 顶部导航 -->
   <nav class="navbar">
-    <a href="index.html" class="logo">
-      <i class="fas fa-paint-brush"></i>
-      <span>童行乡野</span>
-    </a>
+<a href="index.html" class="logo">
+  <img src="images/logo.jpg" alt="童行乡野">
+  <span>童行乡野</span>
+</a >
     <a href="index.html" class="back-link">
       <i class="fas fa-arrow-left"></i> 返回首页
     </a>
