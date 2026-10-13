@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>追寻红色足迹·传承葛牌精神 · 童行乡野</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-cream:#fdfaf5;--purple-primary:#7c5cbf;--purple-light:#b49be0;
+  --purple-soft:#efe8ff;--purple-deep:#5a3d9c;
+  --text-dark:#2e2a3a;--text-muted:#6b657a;
+  --border-light:rgba(124,92,191,.15);
+}
+body{font-family:'Inter',sans-serif;background:var(--bg-cream);color:var(--text-dark);line-height:1.8;min-height:100vh}
+.container{max-width:820px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* 导航 */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.8rem;background:rgba(253,250,245,.85);backdrop-filter:blur(12px);border-radius:60px;border:1px solid var(--border-light);box-shadow:0 8px 20px -8px rgba(90,61,156,.15);margin-bottom:2.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:1.2rem;color:var(--purple-deep);text-decoration:none}
+.logo img{height:38px;width:auto;border-radius:8px;display:block}
+.back-link{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.back-link:hover{color:var(--purple-deep)}
+
+/* 文章头部 */
+.article-tag{display:inline-block;background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;font-weight:600;padding:.3rem 1rem;border-radius:20px;margin-bottom:1rem}
+h1{font-size:1.9rem;color:var(--purple-deep);font-weight:700;margin-bottom:1rem;line-height:1.4}
+.article-meta{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border-light);display:flex;gap:1.5rem;flex-wrap:wrap}
+.article-meta i{color:var(--purple-primary);margin-right:.3rem}
+
+/* 封面 */
+.cover{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-weight:600}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* 正文 */
+.article-body{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);font-size:1rem;color:#4a4458}
+.article-body p{margin-bottom:1.2rem}
+.article-body h3{color:var(--purple-deep);font-size:1.15rem;margin:1.8rem 0 .8rem;display:flex;align-items:center;gap:.5rem}
+.article-body h3 i{color:var(--purple-primary)}
+.article-body blockquote{border-left:4px solid var(--purple-primary);padding:.8rem 1.2rem;background:var(--purple-soft);border-radius:0 12px 12px 0;color:var(--purple-deep);margin:1.2rem 0;font-style:italic}
+.article-body ul{margin-left:1.4rem;margin-bottom:1rem;color:#4a4458}
+.article-body li{margin-bottom:.4rem}
+
+/* 行程表 */
+.schedule-table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1rem;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(90,61,156,.08)}
+.schedule-table th{background:var(--purple-primary);color:#fff;padding:.8rem .6rem;text-align:left;font-weight:600;font-size:.85rem}
+.schedule-table td{padding:.75rem .6rem;border-bottom:1px solid var(--purple-soft);color:#4a4458;vertical-align:top}
+.schedule-table tr:nth-child(even) td{background:#faf7ff}
+.schedule-table tr:last-child td{border-bottom:none}
+
+/* 文章底部 */
+.article-footer{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border-light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.tag{background:var(--purple-soft);color:var(--purple-primary);font-size:.8rem;padding:.3rem .9rem;border-radius:20px;font-weight:500;margin-right:.4rem}
+.back-home{color:var(--purple-primary);text-decoration:none;font-weight:600;font-size:.9rem}
+.back-home:hover{color:var(--purple-deep)}
+
+@media(max-width:600px){
+  .container{padding:1rem 1rem 3rem}
+  h1{font-size:1.5rem}
+  .article-body{padding:1.5rem}
+  .schedule-table{font-size:.8rem}
+  .schedule-table th,.schedule-table td{padding:.6rem .4rem}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="童行乡野">
+      <span>童行乡野</span>
+    </a>
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> 返回首页
+    </a>
+  </nav>
+
+  <!-- 标签 + 标题 -->
+  <span class="article-tag">📰 新闻动态</span>
+  <h1>追寻红色足迹，传承葛牌精神</h1>
+  <div class="article-meta">
+    <span><i class="fas fa-calendar-alt"></i>2025-07-13</span>
+    <span><i class="fas fa-user-edit"></i>童行乡野编辑部</span>
+    <span><i class="fas fa-eye"></i>阅读 326</span>
+  </div>
+
+  <!-- 封面 -->
+  <div class="cover">
+    <img src="https://picsum.photos/900/500?random=45" alt="葛牌镇">
+  </div>
+
+  <!-- 正文 -->
+  <div class="article-body">
+
+    <p>2025 年 7 月 13 日，由童行乡野组织的“红色小红军”亲子寻迹一日游，在蓝田县葛牌镇区苏维埃政府纪念馆顺利举行。20 组亲子家庭参加了本次活动，一起追寻红色足迹，传承葛牌精神。</p>
+
+    <h3><i class="fas fa-lightbulb"></i>活动背景</h3>
+    <p>葛牌镇区苏维埃政府纪念馆位于蓝田县葛牌镇，距蓝田县城 48 千米，交通便利，是中共鄂豫陕省委在西安地区建立最早的红色政权。1935 年 2 月，中国工农红军第 25 军在徐宝珊、吴焕先、程子华、徐海东等率领下长征入陕，突进葛牌镇全歼围敌后，成立了葛牌镇区苏维埃政府。蓝田人民为扩建红军、配合红军作战、建立地方政权作出了重大贡献。</p>
+    <p>纪念馆现保留有“红 25 军军部旧址”“鄂豫陕省委扩大会议旧址”“葛牌镇区苏维埃政府旧址”，占地面积 800 平方米，展出实物资料照片 400 余幅，再现了红军当年枪林弹雨的艰苦岁月，现已成为陕西省青少年爱国主义教育基地。</p>
+    <p>本产品以“追寻红色足迹，传承葛牌精神”为主题，将 K-STAR 人文历史教育理念融入红色文化研学，让幼儿在参观、聆听、创作、宣誓中了解革命历史，感受红色文化的魅力，激发爱国情怀，培养团队协作能力和社会责任感。</p>
+
+    <h3><i class="fas fa-star"></i>核心亮点</h3>
+    <ul>
+      <li><strong>纪念馆参观 · 沉浸式学习：</strong>在讲解员带领下参观苏维埃政府纪念馆，观看红色文化展览，了解革命先烈的英勇事迹。</li>
+      <li><strong>红色故事会 · 代际对话：</strong>邀请当地老人或红色文化传承人为幼儿讲述革命故事，幼儿可提问互动，深入了解红色文化。</li>
+      <li><strong>红色主题绘画 · 创意表达：</strong>提供绘画材料，让幼儿根据参观和听到的故事创作红色主题绘画作品，表达理解与感受。</li>
+      <li><strong>红色文化传承宣誓 · 仪式教育：</strong>全体幼儿参与宣誓仪式，朗读红色经典语录，加强爱国主义教育，培养爱国情感。</li>
+      <li><strong>成长档案记录：</strong>活动结束后，导师填写观察评语，家长上传作品与寄语，系统自动生成幼儿专属成长报告，记录红色研学中的成长瞬间。</li>
+    </ul>
+
+    <h3><i class="fas fa-map-marked-alt"></i>研学地介绍</h3>
+    <p>葛牌镇区苏维埃政府纪念馆位于蓝田县葛牌镇，距蓝田县城 48 千米，蓝葛公路直达，交通便利。葛牌镇区苏维埃政府是中共鄂豫陕省委在西安地区建立最早的红色政权。</p>
+    <p>民国二十四年（1935 年）2 月初，中国工农红军第 25 军在徐宝珊、吴焕先、程子华、徐海东等率领下，长征入陕，红军突进葛牌镇全歼围敌之后，成立了葛牌镇区苏维埃政府。蓝田人民为扩建红军、配合红军作战、建立地方政权作出了重大贡献。</p>
+    <p>葛牌镇现保留有“红 25 军军部旧址”“鄂豫陕省委扩大会议旧址”“葛牌镇区苏维埃政府旧址”。纪念馆占地面积 800 平方米，展出实物资料照片 400 余幅，再现了红军当年枪林弹雨的艰苦岁月，现已成为陕西省青少年爱国主义教育基地。</p>
+
+    <h3><i class="fas fa-calendar-alt"></i>行程回顾</h3>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>时间</th>
+          <th>行程安排</th>
+          <th>学习内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">第一天上午</td>
+          <td>08:30-09:00</td>
+          <td>集合出发，前往葛牌镇</td>
+          <td>研学导师介绍葛牌镇的建设历史，感受红色文化的魅力</td>
+        </tr>
+        <tr>
+          <td>09:00-09:30</td>
+          <td>抵达葛牌镇，介绍活动安排和注意事项</td>
+          <td>研学导师简单介绍活动安排和注意事项</td>
+        </tr>
+        <tr>
+          <td rowspan="6">第一天上午至下午</td>
+          <td>09:30-10:30</td>
+          <td>参观苏维埃政府纪念馆</td>
+          <td>讲解员带领参观纪念馆，讲述葛牌镇的历史背景和红色政权的发展历程；观看红色文化展览；互动问答</td>
+        </tr>
+        <tr>
+          <td>10:30-11:00</td>
+          <td>休息与交流</td>
+          <td>分享参观纪念馆的感受和体会，引导幼儿思考红色文化的重要性和意义</td>
+        </tr>
+        <tr>
+          <td>11:00-12:00</td>
+          <td>午餐时间</td>
+          <td>统一提供特色午餐，感受饮食文化和乡村生活</td>
+        </tr>
+        <tr>
+          <td>12:30-13:30</td>
+          <td>红色故事会</td>
+          <td>邀请当地老人或红色文化传承人为幼儿讲述革命故事，传承红色精神</td>
+        </tr>
+        <tr>
+          <td>13:30-14:30</td>
+          <td>红色主题绘画活动</td>
+          <td>提供绘画材料，幼儿根据参观和听到的故事，创作红色主题绘画作品</td>
+        </tr>
+        <tr>
+          <td>14:30-15:00</td>
+          <td>展示与分享</td>
+          <td>幼儿展示自己的绘画作品，并分享创作过程和感受；老师点评与鼓励</td>
+        </tr>
+        <tr>
+          <td rowspan="4">第一天下午</td>
+          <td>15:00-15:30</td>
+          <td>红色文化传承宣誓</td>
+          <td>全体幼儿参与宣誓仪式，朗读红色经典语录，加强爱国主义教育</td>
+        </tr>
+        <tr>
+          <td>15:30-16:00</td>
+          <td>活动总结与合影</td>
+          <td>全体幼儿合影留念，记录这次难忘的研学之旅</td>
+        </tr>
+        <tr>
+          <td>16:00-16:30</td>
+          <td>集合返程</td>
+          <td>研学导师进行简单总结，乘车返回出发地，结束愉快的研学活动</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3><i class="fas fa-quote-left"></i>活动意义</h3>
+    <p>本次葛牌镇红色研学一日游，让孩子们走进革命历史，了解革命先烈的英勇事迹和革命精神，在参观、聆听、绘画、宣誓中，感受红色文化的魅力，激发爱国情怀。</p>
+    <p>红色故事会与代际对话，让孩子们在真实的故事中理解红色文化的重要性和意义，培养民族认同感和自豪感。</p>
+
+    <blockquote>追寻红色足迹，传承葛牌精神。</blockquote>
+
+  </div>
+
+  <!-- 文章底部 -->
+  <div class="article-footer">
+    <div>
+      <span class="tag"># 葛牌精神</span>
+      <span class="tag"># 红色研学</span>
+      <span class="tag"># K-STAR系列</span>
+    </div>
+    <a href="index.html" class="back-home">← 返回首页</a>
+  </div>
+
+</div>
+</body>
+</html>
