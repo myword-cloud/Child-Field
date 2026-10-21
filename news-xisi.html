@@ -30,39 +30,7 @@ h1{font-size:1.9rem;color:var(--purple-deep);font-weight:700;margin-bottom:1rem;
 .article-meta{color:var(--text-muted);font-size:.9rem;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border-light);display:flex;gap:1.5rem;flex-wrap:wrap}
 .article-meta i{color:var(--purple-primary);margin-right:.3rem}
 
-/* ===== 轮播图 ===== */
-.carousel{
-  position:relative;
-  width:100%;
-  aspect-ratio:16/9;
-  border-radius:24px;
-  overflow:hidden;
-  margin-bottom:2rem;
-  box-shadow:0 15px 35px -18px rgba(90,61,156,.35);
-}
-.carousel-track{
-  display:flex;
-  height:100%;
-  transition:transform .45s cubic-bezier(.25,.8,.3,1);
-}
-.carousel-track figure{
-  flex:0 0 100%;
-  width:100%;
-  height:100%;
-  margin:0;
-  position:relative;
-  overflow:hidden;
-}
-.carousel-track figure img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .4s;
-}
-.carousel-track figure:hover img{
-  transform:scale(1.04);
-}
+
 /* 悬停注释 */
 .carousel-track figcaption{
   position:absolute;
@@ -346,109 +314,7 @@ h1{font-size:1.9rem;color:var(--purple-deep);font-weight:700;margin-bottom:1rem;
   <div class="comment-list" id="commentList"></div>
 </div>  
 <script>
-(function(){
-  const KEY = 'tx_comments_' + location.pathname.split('/').pop().replace('.html','');
-  const listBox = document.getElementById('commentList');
-  if(!listBox) return;
 
-  function getComments(){
-    try{ return JSON.parse(localStorage.getItem(KEY) || '[]'); }
-    catch(e){ return []; }
-  }
-  function saveComments(list){
-    localStorage.setItem(KEY, JSON.stringify(list));
-  }
-  function escapeHtml(str){
-    return str.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  }
-  function render(){
-    const list = getComments();
-    if(list.length === 0){
-      listBox.innerHTML = '<div style="text-align:center;color:#b0a8c0;font-size:.9rem;padding:1rem 0;">还没有评论，快来抢沙发吧～</div>';
-      return;
-    }
-    listBox.innerHTML = list.map(c => `
-      <div class="comment-item">
-        <div class="comment-avatar">${c.avatar}</div>
-        <div class="comment-body">
-          <div class="comment-head">
-            <span class="comment-name">${c.name}</span>
-            <span class="comment-time">${c.time}</span>
-          </div>
-          <div class="comment-text">${escapeHtml(c.text)}</div>
-        </div>
-      </div>
-    `).join('');
-  }
-
-  window.submitComment = function(){
-    const input = document.getElementById('commentInput');
-    const text = input.value.trim();
-    if(!text){ alert('请输入评论内容'); return; }
-
-    const isLogged = localStorage.getItem('tx_logged_in') === '1';
-    if(!isLogged){
-      alert('请先登录后再评论');
-      location.href = 'login.html';
-      return;
-    }
-
-    const user = localStorage.getItem('tx_user') || '匿名用户';
-    const now = new Date();
-    const time = now.getFullYear() + '-' +
-                 String(now.getMonth()+1).padStart(2,'0') + '-' +
-                 String(now.getDate()).padStart(2,'0') + ' ' +
-                 String(now.getHours()).padStart(2,'0') + ':' +
-                 String(now.getMinutes()).padStart(2,'0');
-
-    const list = getComments();
-    list.unshift({
-      name: user,
-      avatar: user.charAt(0).toUpperCase(),
-      time: time,
-      text: text
-    });
-    saveComments(list);
-    input.value = '';
-    render();
-  };
-
-  render();
-})();
-</script>
-<script>
-(function(){
-  const track = document.getElementById('carouselTrack');
-  const dotsBox = document.getElementById('carouselDots');
-  if(!track) return;
-
-  const total = track.children.length;
-  let index = 0;
-
-  // 生成小圆点
-  for(let i=0;i<total;i++){
-    const dot = document.createElement('span');
-    if(i===0) dot.classList.add('active');
-    dot.onclick = () => goTo(i);
-    dotsBox.appendChild(dot);
-  }
-  const dots = dotsBox.children;
-
-  function update(){
-    track.style.transform = `translateX(-${index*100}%)`;
-    for(let i=0;i<total;i++) dots[i].classList.toggle('active', i===index);
-  }
-  function goTo(i){
-    index = (i + total) % total;
-    update();
-  }
-  window.carouselPrev = () => goTo(index - 1);
-  window.carouselNext = () => goTo(index + 1);
-
-  update();
-})();
-</script>
-  
 </div>
 </body>
 </html>
