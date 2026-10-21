@@ -443,6 +443,39 @@ h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;l
     </a>
   </div>
 
+<script>
+(function(){
+  const track = document.getElementById('carouselTrack');
+  const dotsBox = document.getElementById('carouselDots');
+  if(!track) return;
+
+  const total = track.children.length;
+  let index = 0;
+
+  // 生成小圆点
+  for(let i=0;i<total;i++){
+    const dot = document.createElement('span');
+    if(i===0) dot.classList.add('active');
+    dot.onclick = () => goTo(i);
+    dotsBox.appendChild(dot);
+  }
+  const dots = dotsBox.children;
+
+  function update(){
+    track.style.transform = `translateX(-${index*100}%)`;
+    for(let i=0;i<total;i++) dots[i].classList.toggle('active', i===index);
+  }
+  function goTo(i){
+    index = (i + total) % total;
+    update();
+  }
+  window.carouselPrev = () => goTo(index - 1);
+  window.carouselNext = () => goTo(index + 1);
+
+  update();
+})();
+</script>
+  
 </div>
 </body>
 </html>
