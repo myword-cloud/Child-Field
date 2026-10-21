@@ -35,10 +35,111 @@ h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;l
 .meta{color:var(--text-muted);margin-bottom:2rem;font-size:.95rem;display:flex;gap:1.2rem;flex-wrap:wrap;padding-bottom:1.2rem;border-bottom:1px solid var(--border-light)}
 .meta i{color:var(--purple-primary);margin-right:.3rem}
 
-/* 封面图 */
-.banner{width:100%;aspect-ratio:16/9;background:var(--purple-soft);border-radius:24px;overflow:hidden;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;color:var(--purple-primary);font-size:1.1rem;font-weight:600}
-.banner img{width:100%;height:100%;object-fit:cover;display:block}
-
+/* ===== 轮播图 ===== */
+.carousel{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:24px;
+  overflow:hidden;
+  margin-bottom:2rem;
+  box-shadow:0 15px 35px -18px rgba(90,61,156,.35);
+}
+.carousel-track{
+  display:flex;
+  height:100%;
+  transition:transform .45s cubic-bezier(.25,.8,.3,1);
+}
+.carousel-track figure{
+  flex:0 0 100%;
+  width:100%;
+  height:100%;
+  margin:0;
+  position:relative;
+  overflow:hidden;
+}
+.carousel-track figure img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .4s;
+}
+.carousel-track figure:hover img{
+  transform:scale(1.04);
+}
+/* 悬停注释 */
+.carousel-track figcaption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:2rem 1.2rem .9rem;
+  background:linear-gradient(to top,rgba(90,61,156,.9),transparent);
+  color:#fff;
+  font-size:.9rem;
+  font-weight:500;
+  text-align:center;
+  text-shadow:0 2px 6px rgba(0,0,0,.3);
+  opacity:0;
+  transform:translateY(8px);
+  transition:opacity .3s,transform .3s;
+  pointer-events:none;
+}
+.carousel-track figure:hover figcaption{
+  opacity:1;
+  transform:translateY(0);
+}
+/* 左右箭头 */
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:rgba(255,255,255,.85);
+  color:var(--purple-deep);
+  border:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.1rem;
+  box-shadow:0 6px 18px rgba(90,61,156,.25);
+  transition:all .25s;
+  z-index:2;
+}
+.carousel-btn:hover{
+  background:#fff;
+  color:var(--purple-primary);
+  transform:translateY(-50%) scale(1.08);
+}
+.carousel-btn.prev{left:1rem}
+.carousel-btn.next{right:1rem}
+/* 小圆点 */
+.carousel-dots{
+  position:absolute;
+  bottom:1rem;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:.5rem;
+  z-index:2;
+}
+.carousel-dots span{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(255,255,255,.6);
+  cursor:pointer;
+  transition:all .25s;
+}
+.carousel-dots span.active{
+  background:#fff;
+  width:22px;
+  border-radius:10px;
+}
 /* 正文内容 */
 .content-card{background:#fff;border-radius:24px;padding:2.2rem;box-shadow:0 15px 35px -18px rgba(90,61,156,.25);border:1px solid var(--border-light);margin-bottom:1.8rem}
 .content-card h2{color:var(--purple-deep);font-size:1.35rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;padding-bottom:.6rem;border-bottom:2px solid var(--purple-soft)}
@@ -153,11 +254,46 @@ h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;l
     <span><i class="fas fa-tag"></i>K-STAR 系列</span>
   </div>
 
-  <!-- 封面图 -->
-  <div class="banner">
-    <img src="https://picsum.photos/900/500?random=32" alt="户县农民画">
+<!-- 封面轮播 -->
+<div class="carousel" id="carousel">
+  <div class="carousel-track" id="carouselTrack">
+    <figure>
+      <img src="huxiannongminhua1.png" alt="图 1">
+      <figcaption>图注 1</figcaption>
+    </figure>
+    <figure>
+      <img src="huxiannongminhua2.png" alt="图 2">
+      <figcaption>图注 2</figcaption>
+    </figure>
+      <figure>
+      <img src="huxiannongminhua3.png" alt="图 3">
+      <figcaption>图注 3</figcaption>
+    </figure>
+      <figure>
+      <img src="huxiannongminhua4.png" alt="图 4">
+      <figcaption>图注 4</figcaption>
+    </figure>
+      <figure>
+      <img src="huxiannongminhua5.png" alt="图 5">
+      <figcaption>图注 5</figcaption>
+    </figure>
+      <figure>
+      <img src="huxiannongminhua6.png" alt="图 6">
+      <figcaption>图注 6</figcaption>
+    </figure>
+      <figure>
+      <img src="huxiannongminhua7.png" alt="图 7">
+      <figcaption>图注 7</figcaption>
+    </figure>
   </div>
-
+  <button class="carousel-btn prev" onclick="carouselPrev()">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <button class="carousel-btn next" onclick="carouselNext()">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  <div class="carousel-dots" id="carouselDots"></div>
+</div>
   <!-- 产品概述 -->
   <div class="content-card">
     <h2><i class="fas fa-lightbulb"></i>产品概述</h2>
@@ -298,6 +434,40 @@ h1{font-size:2rem;color:var(--purple-deep);font-weight:700;margin-bottom:.8rem;l
     </a>
   </div>
 
+<script>
+(function(){
+  const track = document.getElementById('carouselTrack');
+  const dotsBox = document.getElementById('carouselDots');
+  if(!track) return;
+
+  const total = track.children.length;
+  let index = 0;
+
+  // 生成小圆点
+  for(let i=0;i<total;i++){
+    const dot = document.createElement('span');
+    if(i===0) dot.classList.add('active');
+    dot.onclick = () => goTo(i);
+    dotsBox.appendChild(dot);
+  }
+  const dots = dotsBox.children;
+
+  function update(){
+    track.style.transform = `translateX(-${index*100}%)`;
+    for(let i=0;i<total;i++) dots[i].classList.toggle('active', i===index);
+  }
+  function goTo(i){
+    index = (i + total) % total;
+    update();
+  }
+  window.carouselPrev = () => goTo(index - 1);
+  window.carouselNext = () => goTo(index + 1);
+
+  update();
+})();
+</script>
+
+  
 </div>
 </body>
 </html>
